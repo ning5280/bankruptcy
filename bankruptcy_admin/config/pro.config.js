@@ -1,6 +1,6 @@
 var appConfig = {
-    url:'http://www.fwyun.com',
-    rootPath:'localhost:3000/',
-    serverPath:'http://192.168.0.128:8082/bbls/',
-    ueditPath:'/editorApi/'
+    // url:'http://www.fwyun.com',
+    rootPath:'47.92.140.173/',
+    serverPath:'47.92.140.173/bbls/',
+    ueditPath:'47.92.140.173/editor/'
 };

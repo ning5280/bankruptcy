@@ -1,1 +1,1 @@
-var myApp = angular.module('myApp',[]); //公共包引入
+var myApp = angular.module('myApp',['ipCookie']); //公共包引入

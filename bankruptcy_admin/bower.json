@@ -20,6 +20,8 @@
     "angular-sanitize": "^1.6.4",
     "jquery.cookie": "jquery-cookie#^1.4.1",
     "layer": "^3.0.3",
-    "amazeui": "^2.7.2"
+    "amazeui": "^2.7.2",
+    "angular-cookies": "^1.6.4",
+    "angular-cookie": "^4.1.0"
   }
 }

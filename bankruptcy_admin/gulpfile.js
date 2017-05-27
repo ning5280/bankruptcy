@@ -70,6 +70,7 @@ gulp.task('plugsjs', function() {
   gulp.src([
     app.srcPath+'static/jquery/dist/jquery.min.js',
     app.srcPath + 'static/angular/angular.min.js',
+      app.srcPath + 'static/angular-cookie/angular-cookie.min.js',
     // app.srcPath+'static/layer/build/layer.js',
     //  app.srcPath+'static/amazeui/dist/js/amazeui.min.js'
     ])
@@ -123,7 +124,8 @@ gulp.task('clean', function() {
 
 gulp.task('serve', ['build'], function() {
   $.connect.server({
-    root: [app.devPath],
+//  root: [app.devPath],
+		root:[app.prdPath],
     livereload: true,
     port: 3000,
      middleware: function(connect, opt) {
