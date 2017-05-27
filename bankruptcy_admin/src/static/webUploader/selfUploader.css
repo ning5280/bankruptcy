@@ -1,0 +1,81 @@
+.fileContainer .item a.info {
+    color: #008cee !important;
+    text-decoration: underline;
+    word-break: break-all;
+}
+
+.fileContainer .item a.info:hover {
+    color: #008cee !important;
+}
+
+.fileContainer .delete {
+    color: #ff2323;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.fileContainer {
+    overflow: hidden;
+    display: inline;
+    position: relative;
+    /*top: -13px;*/
+    height: 24px !important
+}
+
+.fileContainer .item {
+    /*float: left;*/
+    margin-right: 25px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    display: block;
+}
+.fileContainer .progress{
+    height: 10px;
+    margin-top: 7px;
+    overflow: inherit;
+}
+.fileContainer .progress-bar{
+  background-color: #008cee;
+  border-radius: 3px;
+}
+.btns {
+    display: inline-table;
+    /*margin-left: 25px;*/
+    position: relative;
+    top: 2px;
+}
+
+.webuploader-pick {
+    color: #333333;
+    background: #f5f4f4;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 1px rgba(0, 0, 0, 0.05);
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    height: 25px;
+    width: 65px;
+    line-height: 24px;
+    vertical-align: middle;
+}
+
+.pro {
+    position: relative;
+}
+.pro .cancel{
+  color:#ff2323;
+}
+.pro .cancel {
+    display: block;
+    position: absolute;
+    right: -25px;
+    top: -4px;
+    /* padding: 5px; */
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+}

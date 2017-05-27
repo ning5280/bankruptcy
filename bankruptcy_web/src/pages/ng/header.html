@@ -1,0 +1,27 @@
+<div class="d-header">
+    <div class="d-wrapp">
+        <!--LOGO-->
+        <a href="javascript:;"><img src="../../images/logo.png" alt="" class="d-logo"/></a>
+        <!--LOGO-->
+        <!--nav-->
+        <ul class="d-nav">
+            <li ng-class="{'d-active':cid=='1'}"><a href="../articleList/list.html?id=1">关于我们</a><span class="d-red-line"></span></li>
+            <li ng-class="{'d-active':cid=='2'}"><a href="../viewList/list.html?id=2">新闻资讯</a><span class="d-red-line"></span></li>
+            <li ng-class="{'d-active':cid=='3'}"><a href="../articleList/list.html?id=3">通知公告</a><span class="d-red-line"></span></li>
+            <li ng-class="{'d-active':cid=='4'}"><a href="../articleList/list.html?id=4">成果展示</a><span class="d-red-line"></span></li>
+            <li ng-class="{'d-active':cid=='5'}"><a href="../articleList/list.html?id=5">司法案例</a><span class="d-red-line"></span></li>
+            <li ng-class="{'d-active':cid=='6'}"><a href="../articleList/list.html?id=6">法律文本</a><span class="d-red-line"></span></li>
+            <li ng-class="{'d-active':cid=='7'}"><a href="javascript:;">敬请期待</a><span class="d-red-line"></span></li>
+        </ul>
+        <!--nav-->
+        <!--search-->
+        <div class="d-g-search" ng-app="myApp">
+            <input type="text" ng-model='keywords'/>
+            <!--搜索的图标-->
+
+            <a href="javascript:;" ng-click="search()" class="d-g-sear-icon"><img src="../../images/1.png" alt="" /></a>
+
+        </div>
+        <!--search-->
+    </div>
+</div>

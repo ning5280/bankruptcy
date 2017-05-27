@@ -1,0 +1,1 @@
+var myApp = angular.module('myApp',[]); //公共包引入

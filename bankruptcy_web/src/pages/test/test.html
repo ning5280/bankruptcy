@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../css/plugs.css" />
+	<link rel="stylesheet" href="../../css/index.css" />
+	<!-- <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" /> -->
+	<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css" />
+	  <style>
+        .page-list .pagination {float:left;}
+        .page-list .pagination span {cursor: pointer;}
+        .page-list .pagination .separate span{cursor: default; border-top:none;border-bottom:none;}
+        .page-list .pagination .separate span:hover {background: none;}
+        .page-list .page-total {float:left; margin: 25px 20px;}
+        .page-list .page-total input, .page-list .page-total select{height: 26px; border: 1px solid #ddd;}
+        .page-list .page-total input {width: 40px; padding-left:3px;}
+        .page-list .page-total select {width: 50px;}
+    </style>
+	<!-- 公共插件打包 比如jquery -->
+	<script src="../../js/plugs.js"></script>
+	<!-- domjs中所有特效打包  commonjs 公共方法打包  config打包-->
+	<script src="../../js/index.js"></script> 
+	<!-- angular相关设置打包  module名 myApp -->
+	<script src="../../js/ng.js"></script>
+	
+	<!-- datajs中文件自行引入 -->
+	<script>
+		// Base.ajax();
+		// var myApp = angular.module('myApp',[]); //公共包引入
+
+		myApp.controller('test',['$scope','appName',function($scope,appName){
+			$scope.paginationConf = {
+		            currentPage: 1,
+		            totalItems: 2000,
+		            itemsPerPage: 15,
+		            pagesLength: 15,
+		            perPageOptions: [10, 20, 30, 40, 50],
+		            rememberPerPage: 'perPageItems',
+		            onChange: function(){
+		            	console.log($scope.paginationConf );
+		            }
+		        };
+		}])
+	</script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="test">
+		<header></header>
+		{{data}}
+		<my-pagination conf="paginationConf"></my-pagination>
+	</div>
+</body>
+</html>

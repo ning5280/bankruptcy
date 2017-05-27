@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amaze UI Admin index Examples</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+
+ 	<link rel="stylesheet" type="text/css" href="../../static/webUploader/webuploader.css?rev=@@hash">
+	<link rel="stylesheet" type="text/css" href="../../static/webUploader/selfUploader.css?rev=@@hash">
+
+	<link rel="stylesheet" href="../../css/index.css?rev=@@hash" />
+	
+	<!-- 公共插件打包 比如jquery -->
+	<script src="../../js/plugs.js?rev=@@hash"></script>
+	<script type="text/javascript" src="../../static/webUploader/webuploader.js?rev=@@hash"></script>
+	<script type="text/javascript" src="../../js/datajs/uploade.js?rev=@@hash"></script>
+    <script src="../../static/layer/build/layer.js"></script>
+	<!-- domjs中所有特效打包  commonjs 公共方法打包  config打包-->
+	<script src="../../js/index.js?rev=@@hash"></script>
+
+    <link rel="stylesheet" href="../../static/amazeui/dist/css/amazeui.min.css?rev=@@hash" />
+    <script type="text/javascript" src="../../static/ueditor/ueditor.config.js?rev=@@hash"> </script>
+    <script type="text/javascript" src="../../static/ueditor/ueditor.all.min.js?rev=@@hash"> </script>
+    <script type="text/javascript" src="../../static/ueditor/lang/zh-cn/zh-cn.js?rev=@@hash"> </script>
+	<!-- angular相关设置打包  module名 myApp -->
+	<script src="../../js/ng.js?rev=@@hash"></script>
+
+
+    <script src="../../js/datajs/articleEdit.js"></script>
+	<style type="text/css">
+		.tpl-content-wrapper{
+			margin-left: 0px;
+		}
+	</style>
+</head>
+
+<body data-type="widgets" ng-app="myApp">
+        <!-- 内容区域 -->
+        <div class="tpl-content-wrappers" ng-controller="articleAdd">
+
+            <!--<div class="container-fluid am-cf">
+                <div class="row">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
+                        <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 表单 <small>Amaze UI</small></div>
+                        <p class="page-header-description">Amaze UI 有许多不同的表格可用。</p>
+                    </div>
+                    <div class="am-u-lg-3 tpl-index-settings-button">
+                        <button type="button" class="page-header-button"><span class="am-icon-paint-brush"></span> 设置</button>
+                    </div>
+                </div>
+
+            </div>-->
+
+            <div class="row-content am-cf">
+
+
+                <div class="row">
+
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">添加文章</div>
+                                <div class="widget-function am-fr">
+                                    <a href="javascript:;" class="am-icon-cog"></a>
+                                </div>
+                            </div>
+                            <div class="widget-body am-fr">
+
+                                <form class="am-form tpl-form-line-form">
+                                    <div class="am-form-group">
+                                        <label for="user-name" class="am-u-sm-3 am-form-label">标题 <span class="tpl-form-line-small-title">Title</span></label>
+                                        <div class="am-u-sm-9">
+                                            <input ng-model="form.title" type="text" name="title" class="tpl-form-input" id="user-name" placeholder="请输入标题文字">
+                                            <!--<small>请填写标题文字10-30字左右。</small>-->
+                                        </div>
+                                    </div>
+
+									<div class="am-form-group">
+                                        <label for="user-name" class="am-u-sm-3 am-form-label">所属栏目 <span class="tpl-form-line-small-title">Column</span></label>
+                                        <div class="am-u-sm-9">
+                                            <select id="doc-select-1" ng-model="form.guide">
+                                                <option ng-value="key" ng-repeat="(key,value) in cateList" ng-bind="value"></option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="user-phone" class="am-u-sm-3 am-form-label">作者 <span class="tpl-form-line-small-title">Author</span></label>
+                                        <div class="am-u-sm-9">
+											<input type="text" name="author" ng-model="form.author" class="tpl-form-input"  placeholder="请输入作者">
+                                            <!--<small>请填写作者名称。</small>-->
+                                        </div>
+                                    </div>
+
+                                    <div class="am-form-group">
+                                        <label class="am-u-sm-3 am-form-label">关键字 <span class="tpl-form-line-small-title">SEO</span></label>
+                                        <div class="am-u-sm-9">
+                                            <input type="text" name="keyWords" ng-model="form.keyWords" placeholder="关键字">
+                                            <small>多个关键字用英文逗号隔开</small>
+                                        </div>
+                                    </div>
+									<div class="am-form-group">
+                                        <label class="am-u-sm-3 am-form-label">摘要 <span class="tpl-form-line-small-title">Introduction</span></label>
+                                        <div class="am-u-sm-9">
+                                            <div class="am-u-sm-12 am-margin-top-xs">
+	                                            <textarea class="" name="remarks" ng-model="form.remarks" rows="10" id="user-intro" placeholder="请输入简介内容"></textarea>
+	                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="am-form-group">
+                                        <label for="user-weibo" class="am-u-sm-3 am-form-label">封面图 <span class="tpl-form-line-small-title">Images</span></label>
+                                        <div class="am-u-sm-9">
+											<div id="fileList" class="uploader-list">
+										    	<div ng-if="form.smallImage" class="file-item thumbnail">
+										    		<img ng-src="{{form.smallImage|pic}}">
+										    		<div class="info">
+
+										    		</div>
+										    		<span class="del">X</span>
+										    	</div>
+										    </div>
+										    <div id="filePicker">选择图片</div>
+										    <input type="hidden" ng-value="form.smallImage" ng-model="form.smallImage" name="smallImage" id="" class="hidden" />
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <!--<div class="am-form-group">-->
+                                        <!--<label for="user-intro" class="am-u-sm-3 am-form-label">隐藏文章</label>-->
+                                        <!--<div class="am-u-sm-9">-->
+                                            <!--<div class="tpl-switch">-->
+                                                <!--<input type="checkbox" class="ios-switch bigswitch tpl-switch-btn" checked="">-->
+                                                <!--<div class="tpl-switch-btn-view">-->
+                                                    <!--<div>-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+                                    <div class="am-form-group">
+                                        <label for="user-intro" class="am-u-sm-3 am-form-label">文章内容</label>
+                                        <div class="am-u-sm-9">
+                                            <!--<textarea class="" rows="10" id="user-intro" placeholder="请输入文章内容"></textarea>-->
+                                            <script class="contentValid" id="editor"  name="articleHtmlContent">
+											</script>
+                                        </div>
+                                    </div>
+
+                                    <div class="am-form-group">
+                                        <div class="am-u-sm-9 am-u-sm-push-3">
+                                            <button type="button" ng-click="submit(form)" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+	    
+	    <script>
+//	    alert(1)
+	    	var ue = UE.getEditor('editor');
+	    </script>
+
+</body>
+
+</html>

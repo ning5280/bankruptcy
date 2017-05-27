@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/plugs.css?rev=@@hash" />
+		<link rel="stylesheet" href="../../css/index.css?rev=@@hash" />
+		<!-- 公共插件打包 比如jquery -->
+		<script src="../../js/plugs.js?rev=@@hash"></script>
+		<!-- domjs中所有特效打包  commonjs 公共方法打包  config打包-->
+		<script src="../../js/index.js?rev=@@hash"></script> 
+		<script src="../../static/layer/build/layer.js"></script>
+		<!-- angular相关设置打包  module名 myApp -->
+		<script src="../../js/ng.js?rev=@@hash"></script>
+		<!--数据获取-->
+		<script src="../../js/dataJs/infoList.js?rev=@@hash"></script>
+	</head>
+	<body ng-app="myApp" ng-controller='articleList'>
+		<!--header-->
+		<header cid="id"></header>
+		<!--header-->
+		
+		<!--content-->
+		<div class="d-content">
+			<!--内容头部-->
+			<div class="d-ct-head">
+				<div class="d-ct-wrapp">
+					<span class="d-ct-big">中国破产法论坛网</span>
+					<span class="d-ct-small">中国破产法论坛网/{{GuideEnum}}</span>
+				</div>
+			</div>
+			<!--内容头部-->
+			<!--内容-->
+			<div class="d-ct-content">
+				<div class="d-ct-wrapp">
+					<div class="d-ctwo">
+						<div class="d-ct-white"></div>
+						<img src="../../images/shadow.png" class="d-ct-shadow"/>
+						<!--二级标题-->
+						<ul class="d-ct-left">
+							<li ng-class="{'d-ct-active':$index == chosedIndex}" ng-repeat = "data in Dsecond" ng-click='DtwoClick($index)'>
+								<a href="{{data.url}}"  ng-click='DarticClick(data.id,data.name)' ng-bind="data.name"></a>
+								<span class="d-ct-red-box"></span>
+							</li>
+						</ul>
+						<!--二级标题-->
+						<!--二级标题的内容开始-->
+						<div class="d-ct-content-1">
+							<div class="d-ct-middle">
+								<h3 ng-bind="dataAll.title"></h3>
+								<div class="d-ct-info">
+									<span ng-bind="dataAll.updateTime"></span>
+									<span>|</span>
+									<span ng-bind="dataAll.author"></span>
+									<span>|</span>
+									<span>浏览量：{{dataAll.readNum?dataAll.readNum:0}}次</span>
+								</div>
+								<!--摘要-->
+								<p class="d-ct-digest" ng-bind="dataAll.remarks"></p>
+								<!--摘要结束-->
+								<!--详情正文-->
+								<div class="d-ct-text" ng-bind-html="dataAll.articleHtmlContent"></div>
+								<!--详情正文结束-->
+							</div>
+						</div>
+						<!--二级标题的内容结束-->
+						<!--相关文章-->
+						<div class="d-ct-article">
+							<div class="d-ct-at-related">
+								相关文章&nbsp;&nbsp;&nbsp;Related articies
+							</div>
+							<ul class="d-ct-at-list">
+								<li ng-repeat='data in dataList'>
+									<a href="../listInfo/info.html?id={{data.id}}">
+										<img src="../../images/boultRed.png" alt="" />
+										{{data.title}}
+									</a>
+								</li>
+								
+							</ul>
+							<ul class="d-ct-at-upDown">
+								<li>
+									
+										<img src="../../images/boultRed.png" alt="" />
+										<span>上一个文章：</span>
+										<a href="../listInfo/info.html?id={{dataAll.preArticle.id}}" ng-bind='dataAll.preArticle.title' ng-show='dataAll.preArticle'></a>
+										<a href="javascript:;" ng-show='!dataAll.preArticle'>没有上一篇</a>
+								</li>
+								<li>
+									
+										<img src="../../images/boultRed.png" alt="" />
+										<span>下一个文章：</span>
+										<a href="../listInfo/info.html?id={{dataAll.nextLawArticle.id}}" ng-bind='dataAll.nextLawArticle.title' ng-show='dataAll.nextLawArticle'></a>
+										<a href="javascript:;" ng-show='!dataAll.nextLawArticle'>没有上一篇</a>
+								</li>
+								
+							</ul>
+						</div>
+						<!--相关文章结束-->
+					</div>
+				</div>
+				<ul class="d-sidebar">
+					<li class="d-top-show">
+						<img src="../../images/r1.png" alt="" class="d-sideImg d-side-top"/>
+					</li>
+					<li>
+						<img src="../../images/r2.png" alt="" class="d-sideImg d-side-code"/>
+						<img src="../../images/code.png" alt="" class="d-code"/>
+					</li>
+				</ul>
+			</div>
+			<!--内容-->
+		</div>
+		<!--content-->
+		
+		
+		<!--footer-->
+		<div class="d-footer">
+			<ul class="d-footer-shat">
+				<li><a href="javascript:;">关于我们</a></li>
+				<li><a href="javascript:;">隐私政策</a></li>
+				<li><a href="javascript:;">网站地图</a></li>
+				<li><a href="javascript:;">友情链接</a></li>
+				<li><a href="javascript:;">网站统计</a></li>
+			</ul>
+			<br />
+			<ul class="d-footer-icon">
+				<li>
+					<a href="javascript:;">
+						<img src="../../images/university.png"/>
+						<span class="d-ft-le">中国人民大学破产法研究中心</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="../../images/association.png" class="d-ft-rt"/>
+						<span>北京破产法协会</span>
+					</a>
+				</li>
+			</ul>
+			<div class="d-footer-bottom">
+				© 2017  <a href="javascript:;">北京市破产法学会</a>  京ICP备1268006号
+			</div>
+		</div>
+		<!--footer-->
+	</body>
+</html>

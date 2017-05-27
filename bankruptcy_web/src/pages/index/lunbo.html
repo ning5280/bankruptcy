@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="../../css/index.css" />
+	<link rel="stylesheet" href="../../css/plugs.css" />
+	
+ 	<!--<link rel="stylesheet" type="text/css" href="../../static/swiper/swiper-3.4.1.min.css?rev=@@hash">-->
+ 	<link rel="stylesheet" type="text/css" href="../../static/swiper/animate.min.css?rev=@@hash">
+ 	<!-- 公共插件打包 比如jquery -->
+	<script src="../../js/plugs.js?rev=@@hash"></script>
+	<script type="text/javascript" src="../../static/swiper/swiper-3.4.1.jquery.min.js?rev=@@hash"></script>
+ 	<script type="text/javascript" src="../../static/swiper/swiper-3.4.1.min.js?rev=@@hash"></script>
+ 	
+	<!-- domjs中所有特效打包  commonjs 公共方法打包  config打包-->
+	<script src="../../js/index.js?rev=@@hash"></script> 
+	<!-- angular相关设置打包  module名 myApp -->
+	<script src="../../js/ng.js?rev=@@hash"></script>
+ 	
+		
+	</head>
+	<body>
+			<div class="swiper-container-nam swipers">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        	<div class="swiperBox-nam">
+			        		<p class="swiper-title-nam animated ">僵尸企业处置工作专题研讨会</p>
+				        	<p class="swiper-text-nam animated">
+				        		僵尸企业处置与破产审判工作专题研讨会
+				        	</p>
+				        	<div class="swiper-view-nam animated">
+				        		<a href="javascript:;" >查看更多</a>
+				        	</div>
+				        	
+			        	</div>
+			        	<div class="swiperImg-nam">
+			        		<div class="ImgBook ImgBook-one">
+			        			<!--<img src="../../images/book.png" class="animated img-nam"/>-->
+			        		</div>
+			        	</div>
+			        </div>
+					<div class="swiper-slide sild-one ">
+			        	<div class="swiperBox-nam">
+			        		<p class="swiper-title-nam animated">僵尸企业处置工作专题研讨会</p>
+				        	<p class="swiper-text-nam  animated">
+				        		僵尸企业处置与破产审判工作专题研讨会
+				        	</p>
+				        	<div class="swiper-view-nam animated">
+				        		<a href="javascript:;" >查看更多</a>
+				        	</div>
+				        	
+			        	</div>
+			        	<div class="swiperImg-nam">
+			        		<div class="ImgBook ImgBook-two">
+			        			<!--<img src="../../images/book.png" class="animated img-nam"/>-->
+			        		</div>
+			        		
+			        	</div>
+			        </div>
+			        <div class="swiper-slide">
+			        	<div class="swiperBox-nam">
+			        		<p class="swiper-title-nam animated">僵尸企业处置工作专题研讨会</p>
+				        	<p class="swiper-text-nam  animated">
+				        		僵尸企业处置与破产审判工作专题研讨会
+				        	</p>
+				        	<div class="swiper-view-nam animated">
+				        		<a href="javascript:;" >查看更多</a>
+				        	</div>
+				        	
+			        	</div>
+			        	<div class="swiperImg-nam">
+			        		<div class="ImgBook ImgBook-three">
+			        			<!--<img src="../../images/book.png" class="animated img-nam"/>-->
+			        		</div>
+			        	</div>
+			        </div>
+			    </div>
+			    <!--<div class="swiper-button-prev topPrev"></div>
+			    <div class="swiper-button-next topNext"></div>-->
+			    <div class="pagination"></div>
+			</div>
+			
+	</body>
+	<script type="text/javascript">
+		//  $(".swiper-slide").eq(0).find(".swiper-title-nam").addClass("fadeInUp"); 
+	
+		//   setTimeout(function(){
+		// 	  $(".swiper-slide").eq(0).find(".swiper-text-nam").addClass("fadeInUp");
+
+		//   },300);
+		//   setTimeout(function(){
+		// 	  $(".swiper-slide").eq(0).find(".swiper-view-nam").addClass("fadeInUp");
+		//   },500);
+		//    $(".swiper-slide").eq(0).find(".ImgBook").addClass("aa");
+
+    var mySwiper = new Swiper('.swiper-container-nam',{
+			loop:true,
+			autoplay : 4500,
+			speed:100,
+			direction: 'vertical',
+			prevButton:'.swiper-button-prev',
+			nextButton:'.swiper-button-next',
+			autoplayDisableOnInteraction: false,
+			paginationClickable :true,
+			 pagination: '.pagination',
+			onSlideChangeStart: function(swiper){
+
+			// $(".swiper-slide .swiper-title-nam").removeClass("fadeInUp").css("opacity","0");
+			// $(".swiper-slide .swiper-text-nam").removeClass("fadeInUp").css("opacity","0");
+			// $(".swiper-slide .swiper-view-nam").removeClass("fadeInUp").css("opacity","0");
+			// $(".swiper-slide .swiper-title-nam").removeClass("fadeOutDown");
+			// $(".swiper-slide .swiper-text-nam").removeClass("fadeOutDown");
+			// $(".swiper-slide .swiper-view-nam").removeClass("fadeOutDown");
+			// $(".swiper-slide .ImgBook").removeClass("aa").css("opacity","0");
+			//   $(".swiper-slide").eq(swiper.activeIndex).find(".swiper-title-nam").addClass("fadeInUp"); 
+			  
+			//   setTimeout(function(){
+			// 	  $(".swiper-slide").eq(swiper.activeIndex).find(".swiper-text-nam").addClass("fadeInUp");
+
+			//   },300);
+			//   setTimeout(function(){
+			// 	  $(".swiper-slide").eq(swiper.activeIndex).find(".swiper-view-nam").addClass("fadeInUp");
+			//   },500);
+			//   $(".swiper-slide").eq(swiper.activeIndex).find(".ImgBook").addClass("aa");
+		   }
+
+		});
+
+		
+		    
+
+	</script>
+</html>

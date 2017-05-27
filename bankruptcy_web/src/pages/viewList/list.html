@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../css/plugs.css?rev=@@hash" />
+		<link rel="stylesheet" href="../../css/index.css?rev=@@hash" />
+		<!-- 公共插件打包 比如jquery -->
+		<script src="../../js/plugs.js?rev=@@hash"></script>
+		<!-- domjs中所有特效打包  commonjs 公共方法打包  config打包-->
+		<script src="../../js/index.js?rev=@@hash"></script>
+		<script src="../../static/layer/build/layer.js"></script>
+		<!-- angular相关设置打包  module名 myApp -->
+		<script src="../../js/ng.js?rev=@@hash"></script>
+		<!--数据获取-->
+		<script src="../../js/dataJs/articleList.js?rev=@@hash"></script>
+	</head>
+	<body ng-app="myApp" ng-controller='articleList'>
+		<!--header-->
+		<header cid="id"></header>
+		<!--header-->
+		
+		<!--content-->
+		<div class="d-content">
+			<!--内容头部-->
+			<div class="d-ct-head">
+				<div class="d-ct-wrapp">
+					<span class="d-ct-big">中国破产法论坛网</span>
+					<span class="d-ct-small">中国破产法论坛网/{{GuideEnum}}</span>
+				</div>
+			</div>
+			<!--内容头部-->
+			<!--内容-->
+			<div class="d-ct-content">
+				<div class="d-ct-wrapp">
+					<div class="d-ctwo">
+						<div class="d-ct-white"></div>
+						<img src="../../images/shadow.png" class="d-ct-shadow"/>
+						<!--二级标题-->
+						<ul class="d-ct-left">
+							<li ng-class="{'d-ct-active':$index == chosedIndex}" ng-repeat = "data in Dsecond" ng-click='DtwoClick($index)'>
+								<a href="javascript:;" id ='{{data.id}}' ng-click='DarticClick(data.id,data.name)' ng-bind="data.name"></a>
+								<span class="d-ct-red-box"></span>
+							</li>
+						</ul>
+						<!--二级标题-->
+						<!--二级标题的内容开始-->
+						<div class="d-ct-right">
+							<div class="d-rigth-ct">
+								<h3 class="d-ct-h2" ng-bind="secondNameD"></h3>
+								<!--二级图标-->
+								<img ng-src="../../images/{{secondSrc}}.png" alt="" class="d-ct-icon"/>
+								<div class="d-ct-num">
+									<span class="d-ct-piece">共有<span class="d-ct-piece-red" ng-bind="dataOther.count"></span>篇文章</span>
+									<span class="d-ct-piece d-ct-piece-float">
+										第<span ng-bind="dataOther.pageNo"></span>页，共<span class="d-ct-piece-red" ng-bind="dataOther.totalPage"></span>页
+									</span>
+								</div>
+								<!--列表开始-->
+								<ul class="d-ct-list d-ct-view-list">
+									<li ng-repeat='data in dataList'>
+										<img ng-src="{{data.smallImage|pic}}" alt="" class="d-ct-view-img"/>
+										<div class="d-ct-view-ct">
+											<a href="../listInfo/info.html?id={{data.id}}" class="d-ct-view-title" ng-bind="data.title" target="_blank"></a>
+											<p ng-bind="data.remarks"></p>
+											<span class="d-ct-view-time" ng-bind="data.updateTime.substr(0,10)"></span>
+										</div>
+									</li>
+								</ul>
+								<!--列表结束-->
+								<my-pagination conf="paginationConf"></my-pagination>
+							</div>
+						</div>
+						<!--二级标题的内容结束-->
+					</div>
+				</div>
+			</div>
+			<!--内容-->
+		</div>
+		<!--content-->
+		
+		
+		<!--footer-->
+		<div class="d-footer">
+			<ul class="d-footer-shat">
+				<li><a href="javascript:;">关于我们</a></li>
+				<li><a href="javascript:;">隐私政策</a></li>
+				<li><a href="javascript:;">网站地图</a></li>
+				<li><a href="javascript:;">友情链接</a></li>
+				<li><a href="javascript:;">网站统计</a></li>
+			</ul>
+			<br />
+			<ul class="d-footer-icon">
+				<li>
+					<a href="javascript:;">
+						<img src="../../images/university.png"/>
+						<span class="d-ft-le">中国人民大学破产法研究中心</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="../../images/association.png" class="d-ft-rt"/>
+						<span>北京破产法协会</span>
+					</a>
+				</li>
+			</ul>
+			<div class="d-footer-bottom">
+				© 2017  <a href="javascript:;">北京市破产法学会</a>  京ICP备1268006号
+			</div>
+		</div>
+		<!--footer-->
+	</body>
+</html>

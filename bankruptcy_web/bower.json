@@ -1,0 +1,24 @@
+{
+  "name": "bankruptcy_admin",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "wangning <529023364@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "angular": "angularjs#^1.6.4",
+    "angular-sanitize": "^1.6.4",
+    "jquery.cookie": "jquery-cookie#^1.4.1",
+    "layer": "^3.0.3"
+  }
+}

@@ -1,0 +1,34 @@
+/*分页公共代码*/
+.page-list .pagination {float:left;}
+.page-list .pagination span {cursor: pointer;}
+.page-list .pagination .separate span{cursor: default; border-top:none;border-bottom:none;}
+.page-list .pagination .separate span:hover {background: none;}
+.page-list .page-total {float:left; margin: 25px 20px;}
+.page-list .page-total input, .page-list .page-total select{height: 26px; border: 1px solid #ddd;}
+.page-list .page-total input {width: 40px; padding-left:3px;}
+.page-list .page-total select {width: 50px;}
+.page-list{
+	overflow: hidden;
+}
+.page-list .am-pagination,.page-list .page-total,.page-list .no-items{
+	float: right;
+}
+.page-list .am-pagination li{
+	width:37px;
+	height: 33px;
+}
+.page-list .page-total{
+	margin: 19px;
+}
+.page-list .page-total input,.page-list .page-total select{
+	margin:0 5px;
+	outline: none;
+	height: 27px;
+	padding: 0;
+	text-indent: 3px;
+}
+.page-list .no-items{
+	height: 30px;
+	line-height: 30px;
+	margin-top: 16px;
+}
