@@ -62,7 +62,7 @@ gulp.task('datajs', function() {
   gulp.src(app.srcPath + 'js/datajs/**/*.js')
   .pipe($.plumber())
   .pipe(gulp.dest(app.devPath + 'js/datajs'))
-   .pipe($.uglify())
+    .pipe($.uglify())
   .pipe(gulp.dest(app.prdPath + 'js/datajs'))
   .pipe($.connect.reload());
 });
@@ -125,8 +125,8 @@ gulp.task('clean', function() {
 
 gulp.task('serve', ['build'], function() {
   $.connect.server({
-//  root: [app.devPath],
-		root:[app.prdPath],
+ root: [app.devPath],
+		// root:[app.prdPath],
     livereload: true,
     port: 3000,
      middleware: function(connect, opt) {

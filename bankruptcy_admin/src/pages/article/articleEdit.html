@@ -7,11 +7,9 @@
     <title>Amaze UI Admin index Examples</title>
     <meta name="description" content="这是一个 index 页面">
     <meta name="keywords" content="index">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="renderer" content="webkit">
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
 
  	<link rel="stylesheet" type="text/css" href="../../static/webUploader/webuploader.css?rev=@@hash">
 	<link rel="stylesheet" type="text/css" href="../../static/webUploader/selfUploader.css?rev=@@hash">
@@ -44,7 +42,7 @@
 
 <body data-type="widgets" ng-app="myApp">
         <!-- 内容区域 -->
-        <div class="tpl-content-wrappers" ng-controller="articleAdd">
+        <div class="tpl-content-wrappers" ng-controller="articleEdit">
 
             <!--<div class="container-fluid am-cf">
                 <div class="row">
@@ -78,8 +76,8 @@
                                     <div class="am-form-group">
                                         <label for="user-name" class="am-u-sm-3 am-form-label">标题 <span class="tpl-form-line-small-title">Title</span></label>
                                         <div class="am-u-sm-9">
-                                            <input ng-model="form.title" type="text" name="title" class="tpl-form-input" id="user-name" placeholder="请输入标题文字">
-                                            <!--<small>请填写标题文字10-30字左右。</small>-->
+                                            <input ng-model="form.title" maxlength="200" type="text" name="title" class="tpl-form-input" id="user-name" placeholder="请输入标题文字">
+                                            <small>标题不超过200字</small>
                                         </div>
                                     </div>
 
@@ -87,7 +85,7 @@
                                         <label for="user-name" class="am-u-sm-3 am-form-label">所属栏目 <span class="tpl-form-line-small-title">Column</span></label>
                                         <div class="am-u-sm-9">
                                             <select id="doc-select-1" ng-model="form.guide">
-                                                <option ng-value="key" ng-repeat="(key,value) in cateList" ng-bind="value"></option>
+                                                <option ng-repeat="key in $root.serverConstant_GuideEnum_Tree"  ng-value="key.id" ng-bind="key.treeName"></option>
 
                                             </select>
                                         </div>
@@ -95,23 +93,24 @@
                                     <div class="am-form-group">
                                         <label for="user-phone" class="am-u-sm-3 am-form-label">作者 <span class="tpl-form-line-small-title">Author</span></label>
                                         <div class="am-u-sm-9">
-											<input type="text" name="author" ng-model="form.author" class="tpl-form-input"  placeholder="请输入作者">
-                                            <!--<small>请填写作者名称。</small>-->
+											<input type="text" name="author" maxlength="200" ng-model="form.author" class="tpl-form-input"  placeholder="请输入作者">
+                                            <small>作者不超过200字</small>
                                         </div>
                                     </div>
 
                                     <div class="am-form-group">
-                                        <label class="am-u-sm-3 am-form-label">关键字 <span class="tpl-form-line-small-title">SEO</span></label>
+                                        <label class="am-u-sm-3 am-form-label">关键字 <span class="tpl-form-line-small-title">Keywords</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" name="keyWords" ng-model="form.keyWords" placeholder="关键字">
-                                            <small>多个关键字用英文逗号隔开</small>
+                                            <input type="text" name="keyWords" maxlength="20" ng-model="form.keyWords" placeholder="关键字">
+                                            <small>多个关键字用英文逗号隔开, 不超过20字</small>
                                         </div>
                                     </div>
 									<div class="am-form-group">
                                         <label class="am-u-sm-3 am-form-label">摘要 <span class="tpl-form-line-small-title">Introduction</span></label>
                                         <div class="am-u-sm-9">
                                             <div class="am-u-sm-12 am-margin-top-xs">
-	                                            <textarea class="" name="remarks" ng-model="form.remarks" rows="10" id="user-intro" placeholder="请输入简介内容"></textarea>
+	                                            <textarea class="" name="remarks" maxlength="200" ng-model="form.remarks" rows="6" id="user-intro" placeholder="请输入摘要内容"></textarea>
+                                                <small>不超过200字</small>
 	                                        </div>
                                         </div>
                                     </div>

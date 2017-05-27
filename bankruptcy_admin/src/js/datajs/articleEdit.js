@@ -1,4 +1,4 @@
-myApp.controller('articleAdd',['$scope',function($scope){
+myApp.controller('articleEdit',['$scope',function($scope){
     // console.log(serverConstant_GuideEnum)
     $scope.cateList = serverConstant_GuideEnum;
     $scope.form = {};
