@@ -1,6 +1,6 @@
 var appConfig = {
     // url:'http://www.fwyun.com',
-    rootPath:'47.92.140.173/',
-    serverPath:'47.92.140.173/bbls/',
-    ueditPath:'47.92.140.173/editor/'
+    rootPath:'http://47.92.140.173/', //项目
+    serverPath:'http://47.92.140.173/bbls/', //接口
+    ueditPath:'http://47.92.140.173/editor/' //图片
 };

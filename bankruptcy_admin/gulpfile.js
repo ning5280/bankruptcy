@@ -62,6 +62,7 @@ gulp.task('datajs', function() {
   gulp.src(app.srcPath + 'js/datajs/**/*.js')
   .pipe($.plumber())
   .pipe(gulp.dest(app.devPath + 'js/datajs'))
+   .pipe($.uglify())
   .pipe(gulp.dest(app.prdPath + 'js/datajs'))
   .pipe($.connect.reload());
 });

@@ -236,7 +236,13 @@ myApp.directive('header',[function(){
         },
         link:function(scope){
             scope.search = function(){
-                location.href = '../searchList/list.html?keywords='+encodeURIComponent(encodeURIComponent(scope.keywords));
+                if(scope.keywords){
+                    location.href = '../searchList/list.html?keywords='+encodeURIComponent(encodeURIComponent(scope.keywords));
+
+                }else{
+                    location.href = '../searchList/list.html?keywords=';
+
+                }
             }
         }
     }
