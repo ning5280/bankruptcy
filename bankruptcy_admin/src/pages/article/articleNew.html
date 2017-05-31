@@ -101,7 +101,7 @@
                                     <div class="am-form-group">
                                         <label class="am-u-sm-3 am-form-label">关键字 <span class="tpl-form-line-small-title">Keywords</span></label>
                                         <div class="am-u-sm-9">
-                                            <input type="text" name="keyWords" ng-model="form.keyWords" placeholder="关键字">
+                                            <input type="text" name="keyWords" ng-model="form.keyWords" maxlength="20" max placeholder="关键字">
                                             <small>多个关键字用英文逗号隔开,不超过20字</small>
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@
                                         <label class="am-u-sm-3 am-form-label">摘要 <span class="tpl-form-line-small-title">Introduction</span></label>
                                         <div class="am-u-sm-9">
                                             <div class="am-u-sm-12 am-margin-top-xs">
-	                                            <textarea class="" name="remarks" ng-model="form.remarks" rows="6" id="user-intro" placeholder="请输入摘要内容"></textarea>
+	                                            <textarea class="" name="remarks" maxlength="200" ng-model="form.remarks" rows="6" id="user-intro" placeholder="请输入摘要内容"></textarea>
                                                 <small>摘要不超过200字</small>
 	                                        </div>
                                         </div>

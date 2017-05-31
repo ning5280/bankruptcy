@@ -1,4 +1,4 @@
-myApp.controller('articleList',['$scope',function($scope){
+myApp.controller('articleList',['$scope','$sce',function($scope,$sce){
 	var id = Base.getUrlParam('id');
 	Base.ajax({
         url:appConfig.serverPath+'article/info',
@@ -42,6 +42,7 @@ myApp.controller('articleList',['$scope',function($scope){
                 	$scope.GuideEnum = serverConstant_GuideEnum[id];
                     $scope.Dsecond = Djson;
                     $scope.dataAll = dataDjson;
+                    $scope.content=$sce.trustAsHtml($scope.dataAll.articleHtmlContent);
                 })
             }
         }
@@ -58,14 +59,15 @@ myApp.controller('articleList',['$scope',function($scope){
                     $scope.dataList = res.dataResult.list;
                 })
             }
-            var middleHeight = $('.d-ct-content').height();
-			var articleHeight = $('.d-ct-article').height();
-			var leftHeight = $('.d-ct-left').height();
-			console.log(middleHeight);
-			console.log(articleHeight);
-			if(middleHeight<articleHeight){
-				$('.d-ct-middle').height(articleHeight);
-			}
+            
+//          var middleHeight = $('.d-ct-content').height();
+//			var articleHeight = $('.d-ct-article').height();
+//			var leftHeight = $('.d-ct-left').height();
+//			console.log(middleHeight);
+//			console.log(articleHeight);
+//			if(middleHeight<articleHeight){
+//				$('.d-ct-middle').height(articleHeight);
+//			}
         }
     })
 }])

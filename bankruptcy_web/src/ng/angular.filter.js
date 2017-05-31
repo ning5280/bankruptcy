@@ -27,3 +27,10 @@ myApp.filter('keyword',function(){
 		}
 	}
 })
+//
+//myApp.filter('trustAsHtml',function($sce){
+//	return function (text) {
+////		return text;
+// 		 return $sce.trustAsHtml(text);
+//	};
+//});
