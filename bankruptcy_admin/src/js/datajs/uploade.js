@@ -45,7 +45,7 @@ jQuery(function() {
     uploader.on( 'fileQueued', function( file ) {
     	
     	if(!!$(".hidden").val()){
-    		alert("only one");
+    		Base.alert("只能上传一张封面图！")
     		return false;
     	};
         var $li = $(

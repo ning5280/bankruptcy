@@ -10,7 +10,7 @@ myApp.controller('articleList',['$scope',function($scope){
             	//获取一级标题
             	var dataDjson = res.dataResult;
 				var id = dataDjson.guide.substr(0,1);
-				
+				document.title = dataDjson.title+'-中国破产法论坛网';
 				$scope.id = id;
 				var Djson = {};
 				var Dnum = 0
