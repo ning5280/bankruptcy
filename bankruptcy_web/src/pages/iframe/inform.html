@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>通知通告</title>
+		<link rel="stylesheet" href="../../css/index.css?rev=@@hash" />
+		<link href="../../images/favicon.ico" rel="shortcut icon">
+		<!-- 公共插件打包 比如jquery -->
+		<script src="../../js/plugs.js?rev=@@hash"></script>
+		<!-- domjs中所有特效打包  commonjs 公共方法打包  config打包-->
+		<script src="../../js/index.js?rev=@@hash"></script> 
+		<script src="../../static/layer/build/layer.js"></script>
+		<!-- angular相关设置打包  module名 myApp -->
+		<script src="../../js/ng.js?rev=@@hash"></script>
+		<!--数据获取-->
+		<script src="../../js/datajs/inform.js?rev=@@hash"></script>
+	</head>
+	<body ng-app='myApp' ng-controller='informInfo' style="padding: 20px;box-sizing: border-box;">
+		<h4 class="d-inform-title" ng-bind='dataAll.title'></h4>
+		<div class="d-inform-content" ng-bind-html='content'></div>
+	</body>
+</html>

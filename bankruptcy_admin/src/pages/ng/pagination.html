@@ -1,7 +1,7 @@
 <div class="page-list"> 
     <div class="no-items" ng-show="conf.totalItems <= 0">暂无数据</div>
     <div class="page-total" ng-show="conf.totalItems > 0"> 
-        	第<input type="text" ng-model="jumpPageNum"  ng-blur="jumpToPage($event)"/>页
+        	第<input type="text" ng-model="jumpPageNum"  ng-keydown="jumpToPage($event)"/>页
                          每页<select ng-model="conf.itemsPerPage" ng-options="option for option in conf.perPageOptions " ng-change="changeItemsPerPage()"></select>
           /共<strong>{{ conf.totalItems }}</strong>条 
     </div> 

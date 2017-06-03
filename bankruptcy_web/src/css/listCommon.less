@@ -108,14 +108,15 @@
                     .d-ct-icon{
                         position: absolute;
                         display: inline-block;
-                        left: -38px;
-                        top: -18px;
+                        left: -30px;
+                        top: -14px;
                     }
                     .d-ct-num{
                         line-height: 40px;
                         padding-left: 17px;
                         span.d-ct-piece{
                             color: #484848;
+                            font-size: 12px;
                             .d-ct-piece-red{
                                 color: @red;
                             }
@@ -153,6 +154,7 @@
                             .d-ct-list-time{
                                 color: @red;
                                 float: right;
+                                font-size: 14px;
                             }
                             &:nth-child(2n){
                                 background: #fff;
@@ -167,6 +169,7 @@
                 .d-ct-keyword{
                     line-height: 44px;
                     color: #5d5d5d;
+                    font-size: 12px;
                     padding-left: 17px;
                     .d-ct-search-keywords{
                         background: @red;
@@ -180,6 +183,11 @@
                         .d-ct-list-name{
                             position: absolute;
                             left: 80%;
+                            font-size: 13px;
+                            width: 80px;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
                         }
                         .d-ct-list-key-red{
                             color: @red;
@@ -189,7 +197,7 @@
             }
             //视图列表样式
             .d-ct-right{
-                min-height: 240px;
+                min-height: 308px;
                 .d-ct-list.d-ct-view-list{
                     border: none;
                     margin-top: -10px;
@@ -266,6 +274,7 @@
                         padding: 17px 0 12px 0;
                         text-align: center;
                         margin-bottom: 13px;
+                        font-size: 12px;
                         span{
                             margin-right: 9px;
                             color: @black5;
@@ -276,6 +285,7 @@
                         padding: 15px 10px;
                         color: @black6;
                         line-height: 26px;
+                        font-size: 13px;
                     }
                     .d-ct-text{
                         padding: 10px;
@@ -323,17 +333,26 @@
                 .d-ct-at-upDown{
                     border-top: 1px solid @red;
                     li{
-                        padding: 14px 20px;
+                        padding: 14px 15px;
+                        overflow: hidden;
                         box-sizing: border-box;
                         a{
                             display: inline-block;
                             font-size: 14px;
                             color: @black3;
                             float: left;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
                             width: 110px;
                             &:hover{
                                 color: @red;
                             }  
+                        }
+                        a.d-ct-at-rewq,
+                        a.d-ct-at-rewq:hover{
+                            color: @black3;
+                            cursor: default;
                         }
                         img{
                             margin-right: 9px;
@@ -370,8 +389,8 @@
             position: absolute;
             right: 47px;
             bottom: 20px;
-            width: 200px;
-            height: 220px;
+            width: 214px;
+            height: 239px;
         }
     }
     .d-top-show{

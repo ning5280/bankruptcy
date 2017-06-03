@@ -5,6 +5,7 @@
 		<title></title>
 		<link rel="stylesheet" href="../../css/plugs.css?rev=@@hash" />
 		<link rel="stylesheet" href="../../css/index.css?rev=@@hash" />
+		<link href="../../images/favicon.ico" rel="shortcut icon">
 		<!-- 公共插件打包 比如jquery -->
 		<script src="../../js/plugs.js?rev=@@hash"></script>
 		<!-- domjs中所有特效打包  commonjs 公共方法打包  config打包-->
@@ -59,7 +60,7 @@
 								<p class="d-ct-digest" ng-bind="dataAll.remarks"></p>
 								<!--摘要结束-->
 								<!--详情正文-->
-								<div class="d-ct-text" ng-bind-html="content"></div>
+								<div class="d-ct-text" ng-bind-html="content" style="overflow: hidden;"></div>
 								<!--详情正文结束-->
 							</div>
 						</div>
@@ -67,7 +68,7 @@
 						<!--相关文章-->
 						<div class="d-ct-article">
 							<div class="d-ct-at-related">
-								相关文章&nbsp;&nbsp;&nbsp;Related articies
+								相关文章&nbsp;Related articles
 							</div>
 							<ul class="d-ct-at-list">
 								<li ng-repeat='data in dataList'>
@@ -84,14 +85,14 @@
 										<img src="../../images/boultRed.png" alt="" />
 										<span>上一个文章：</span>
 										<a href="../listInfo/info.html?id={{dataAll.preLawArticle.id}}" ng-bind='dataAll.preLawArticle.title' ng-show='dataAll.preLawArticle'></a>
-										<a href="javascript:;" ng-show='!dataAll.preLawArticle'>没有上一篇</a>
+										<a href="javascript:;" ng-show='!dataAll.preLawArticle' class="d-ct-at-rewq">没有上一篇</a>
 								</li>
 								<li>
 									
 										<img src="../../images/boultRed.png" alt="" />
 										<span>下一个文章：</span>
 										<a href="../listInfo/info.html?id={{dataAll.nextLawArticle.id}}" ng-bind='dataAll.nextLawArticle.title' ng-show='dataAll.nextLawArticle'></a>
-										<a href="javascript:;" ng-show='!dataAll.nextLawArticle'>没有下一篇</a>
+										<a href="javascript:;" ng-show='!dataAll.nextLawArticle'  class="d-ct-at-rewq">没有下一篇</a>
 								</li>
 								
 							</ul>
@@ -115,33 +116,7 @@
 		
 		
 		<!--footer-->
-		<div class="d-footer">
-			<ul class="d-footer-shat">
-				<li><a href="javascript:;">关于我们</a></li>
-				<li><a href="javascript:;">隐私政策</a></li>
-				<li><a href="javascript:;">网站地图</a></li>
-				<li><a href="javascript:;">友情链接</a></li>
-				<li><a href="javascript:;">网站统计</a></li>
-			</ul>
-			<br />
-			<ul class="d-footer-icon">
-				<li>
-					<a href="javascript:;">
-						<img src="../../images/university.png"/>
-						<span class="d-ft-le">中国人民大学破产法研究中心</span>
-					</a>
-				</li>
-				<li>
-					<a href="javascript:;">
-						<img src="../../images/association.png" class="d-ft-rt"/>
-						<span>北京破产法协会</span>
-					</a>
-				</li>
-			</ul>
-			<div class="d-footer-bottom">
-				© 2017  <a href="javascript:;">北京市破产法学会</a>  京ICP备1268006号
-			</div>
-		</div>
+		<footer></footer>
 		<!--footer-->
 	</body>
 </html>

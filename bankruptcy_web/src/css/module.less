@@ -16,7 +16,7 @@
             display: block;
             float: left;
             width: 209px;
-            height: 40px;
+            height: 44px;
             margin-top: 14px;
             margin-left: 65px;
         }
@@ -39,7 +39,7 @@
                 .d-red-line{
                     display: inline-block;
                     width: 60px;
-                    height: 4px;
+                    height: 0px;
                     background: #fff;
                     position: absolute;
                     bottom: 2px;
@@ -49,10 +49,26 @@
                 &.d-active,&:hover{
                     .d-red-line{
                         background: @red;
+                        height: 4px;
                     }
                    a{
                        color: @red;
                    } 
+                }
+                &:last-of-type{
+                    cursor: default;
+                    a{
+                        color: #B9B9B9;
+                        cursor: default;
+                    }
+                    &:hover{
+                        .d-red-line{
+                            background: #fff;
+                        }
+                        a{
+                            color: #B9B9B9;
+                        }
+                    }
                 }
             }
         }
@@ -128,10 +144,12 @@
                 display: inline-block;
                 text-align: left;
                 vertical-align: middle;
+                font-size: 12px;
             }
             .d-ft-le{
                 width: 108px;
                 vertical-align: super;
+                
             }
             .d-ft-rt{
                 vertical-align: middle;
@@ -144,6 +162,7 @@
         color: #fff;
         line-height: 37px;
         margin-top: 26px;
+        font-size: 12px;
         a{
             text-decoration: underline;
             color: #fff;
@@ -158,6 +177,7 @@
     margin: 20px 0;
     border-radius: 4px;
     float: right;
+    font-size: 12px;
     li{
         display: inline;
     }
@@ -196,6 +216,7 @@
 }
 .page-list .page-total {
     float:right; margin: 20px 20px;
+    font-size: 12px;
     }
 .page-list .page-total input, .page-list .page-total select{
     height: 26px; border: 1px solid #cdcdcd;

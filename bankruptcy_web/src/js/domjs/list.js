@@ -37,13 +37,13 @@ $(function(){
 //	})
 //	
 	//视图列表的内容的溢出隐藏
-	for(var i=0;i<$('.d-ct-view-list li p').length;i++){
-		var Dstr = $('.d-ct-view-list li p').eq(i).text();
-		if(Dstr.length>111){
-			Dstr = Dstr.substr(0,110);
-			$('.d-ct-view-list li p').eq(i).text(Dstr+'...');
-		}
-	}
+//	for(var i=0;i<$('.d-ct-view-list li p').length;i++){
+//		var Dstr = $('.d-ct-view-list li p').eq(i).text();
+//		if(Dstr.length>111){
+//			Dstr = Dstr.substr(0,110);
+//			$('.d-ct-view-list li p').eq(i).text(Dstr+'...');
+//		}
+//	}
 	//详情页中的页面高度问题
 	
 //		var middleHeight = $('.d-ct-content').height();
@@ -81,11 +81,11 @@ $(function(){
 	})
 	 $(window).scroll(function(){
         if ($(window).scrollTop()> $(window).height()){
-            $(".d-sidebar li.d-top-show").fadeIn(1500);
+            $(".d-sidebar li.d-top-show").fadeIn(500);
         }
         else
         {
-            $(".d-sidebar li.d-top-show").fadeOut(1500);
+            $(".d-sidebar li.d-top-show").fadeOut(500);
         }
     });
 })

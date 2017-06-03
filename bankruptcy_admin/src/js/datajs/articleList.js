@@ -11,11 +11,13 @@ myApp.controller('articleList',['$scope','pageSize',function($scope,pageSize){
         pagesLength: 5,
         perPageOptions: [parseInt(pageSize)],
         rememberPerPage: 'perPageItems',
-        onChange: function(){
-
+        onChange: function(keywords){
+           if(!keywords){
+               keywords='';
+           }
             Base.ajax({
                 url:appConfig.serverPath+'article/pageList',
-                data:{pageSize:pageSize,pageNo:$scope.paginationConf.currentPage,orderBy:'a.update_time desc','guide':$scope.searchCate},
+                data:{pageSize:pageSize,pageNo:$scope.paginationConf.currentPage,orderBy:'a.update_time desc','guide':$scope.searchCate,searchContent:keywords},
                 loading:true,
                 success:function(res){
                     if(res.dataStatus=='t1'){
@@ -29,7 +31,14 @@ myApp.controller('articleList',['$scope','pageSize',function($scope,pageSize){
             })
         }
     };
+    $scope.search=function(){
 
+
+
+            $scope.paginationConf.onChange($scope.keywords);
+            $scope.$broadcast('reset');
+        
+    }
     // setTimeout(function(){
     //     // $scope.$broadcast('reset');
     //     $scope.paginationConf.onChange();

@@ -2,9 +2,10 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>搜索结果</title>
 		<link rel="stylesheet" href="../../css/plugs.css?rev=@@hash" />
 		<link rel="stylesheet" href="../../css/index.css?rev=@@hash" />
+		<link href="../../images/favicon.ico" rel="shortcut icon">
 		<!-- 公共插件打包 比如jquery -->
 		<script src="../../js/plugs.js?rev=@@hash"></script>
 		<!-- domjs中所有特效打包  commonjs 公共方法打包  config打包-->
@@ -57,11 +58,11 @@
 								<!--列表开始-->
 								<ul class="d-ct-list">
 									<li ng-repeat='data in dataList'>
-										<a class="d-ct-list-title" href="../listInfo/info.html?id={{data.id}}" ng-bind-html="data.title|keyword"></a>
+										<a class="d-ct-list-title" target="_blank" href="../listInfo/info.html?id={{data.id}}" ng-bind-html="data.title|keyword"></a>
 										<span class="d-ct-list-name" ng-bind-html="data.author|keyword"></span>
 										<span class="d-ct-list-time" ng-bind="data.updateTime.substr(0,10)"></span>
 									</li>
-									
+
 								</ul>
 								<!--列表结束-->
 								<my-pagination conf="paginationConf"></my-pagination>
@@ -77,33 +78,7 @@
 		
 		
 		<!--footer-->
-		<div class="d-footer">
-			<ul class="d-footer-shat">
-				<li><a href="javascript:;">关于我们</a></li>
-				<li><a href="javascript:;">隐私政策</a></li>
-				<li><a href="javascript:;">网站地图</a></li>
-				<li><a href="javascript:;">友情链接</a></li>
-				<li><a href="javascript:;">网站统计</a></li>
-			</ul>
-			<br />
-			<ul class="d-footer-icon">
-				<li>
-					<a href="javascript:;">
-						<img src="../../images/university.png"/>
-						<span class="d-ft-le">中国人民大学破产法研究中心</span>
-					</a>
-				</li>
-				<li>
-					<a href="javascript:;">
-						<img src="../../images/association.png" class="d-ft-rt"/>
-						<span>北京破产法协会</span>
-					</a>
-				</li>
-			</ul>
-			<div class="d-footer-bottom">
-				© 2017  <a href="javascript:;">北京市破产法学会</a>  京ICP备1268006号
-			</div>
-		</div>
+		<footer></footer>
 		<!--footer-->
 	</body>
 </html>

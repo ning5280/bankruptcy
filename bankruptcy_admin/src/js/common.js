@@ -37,7 +37,12 @@ var Base = {
             this.alert(res.dataMessage,'error');
         }else if(res.dataStatus=='f2'){
             // console.log(res);
+
             top.location.href = '/pages/login/index.html';
+        }else if(res.dataStatus=='t1'){
+
+        }else{
+            this.alert(res.dataMessage,'error');
         }
     },
     //参数处理

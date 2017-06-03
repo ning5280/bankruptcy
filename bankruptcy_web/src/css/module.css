@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   font-family: "微软雅黑";
-  /*font-size: 12px;*/
   word-break: break-all;
 }
 a {
@@ -28,7 +27,7 @@ ul {
   display: block;
   float: left;
   width: 209px;
-  height: 40px;
+  height: 44px;
   margin-top: 14px;
   margin-left: 65px;
 }
@@ -53,7 +52,7 @@ ul {
 .d-header .d-wrapp .d-nav li .d-red-line {
   display: inline-block;
   width: 60px;
-  height: 4px;
+  height: 0px;
   background: #fff;
   position: absolute;
   bottom: 2px;
@@ -63,10 +62,24 @@ ul {
 .d-header .d-wrapp .d-nav li.d-active .d-red-line,
 .d-header .d-wrapp .d-nav li:hover .d-red-line {
   background: #e71111;
+  height: 4px;
 }
 .d-header .d-wrapp .d-nav li.d-active a,
 .d-header .d-wrapp .d-nav li:hover a {
   color: #e71111;
+}
+.d-header .d-wrapp .d-nav li:last-of-type {
+  cursor: default;
+}
+.d-header .d-wrapp .d-nav li:last-of-type a {
+  color: #B9B9B9;
+  cursor: default;
+}
+.d-header .d-wrapp .d-nav li:last-of-type:hover .d-red-line {
+  background: #fff;
+}
+.d-header .d-wrapp .d-nav li:last-of-type:hover a {
+  color: #B9B9B9;
 }
 .d-header .d-wrapp .d-g-search {
   float: left;
@@ -137,6 +150,7 @@ ul {
   display: inline-block;
   text-align: left;
   vertical-align: middle;
+  font-size: 12px;
 }
 .d-footer .d-footer-icon li .d-ft-le {
   width: 108px;
@@ -150,6 +164,7 @@ ul {
   color: #fff;
   line-height: 37px;
   margin-top: 26px;
+  font-size: 12px;
 }
 .d-footer .d-footer-bottom a {
   text-decoration: underline;
@@ -161,6 +176,7 @@ ul {
   margin: 20px 0;
   border-radius: 4px;
   float: right;
+  font-size: 12px;
 }
 .am-pagination li {
   display: inline;
@@ -213,6 +229,7 @@ ul {
 .page-list .page-total {
   float: right;
   margin: 20px 20px;
+  font-size: 12px;
 }
 .page-list .page-total input,
 .page-list .page-total select {

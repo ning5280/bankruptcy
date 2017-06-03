@@ -33,7 +33,7 @@
         // , serverUrl: appConfig.ueditPath + "jsp/controller.jsp"
        ,serverUrl:  appConfig.ueditPath+ "jsp/controller.jsp"
         //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的从新定义
-        , toolbars: [['fullscreen', 'undo', 'redo'], ['bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist','rowspacingtop','rowspacingbottom','lineheight', 'paragraph', 'fontfamily','fontsize', 'justifyleft','justifyright','justifycenter','justifyjustify','imagenone','imageleft','imageright','imagecenter','insertimage','preview']]
+        , toolbars: [['fullscreen', 'undo', 'redo'], ['bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist','rowspacingtop','rowspacingbottom','lineheight', 'paragraph', 'fontfamily','fontsize', 'justifyleft','justifyright','justifycenter','justifyjustify','imagenone','imageleft','imageright','imagecenter','insertimage','preview','wordimage']]
         //当鼠标放在工具栏上时显示的tooltip提示,留空支持自动多语言配置，否则以配置值为准
         //,labelMap:{
         //    'anchor':'', 'undo':''
@@ -99,7 +99,7 @@
         //粘贴只保留标签，去除标签所有属性
         //,retainOnlyLabelPasted: false
 
-        ,pasteplain:true  //是否默认为纯文本粘贴。false为不使用纯文本粘贴，true为使用纯文本粘贴
+        ,pasteplain:false  //是否默认为纯文本粘贴。false为不使用纯文本粘贴，true为使用纯文本粘贴
         //纯文本粘贴模式下的过滤规则
         //'filterTxtRules' : function(){
         //    function transP(node){

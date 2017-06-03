@@ -174,7 +174,10 @@ myApp.directive('myPagination',[function(){
             };
 
             // 跳转页
-            scope.jumpToPage = function(){
+            scope.jumpToPage = function(e){
+                if(e.keyCode!=13){
+                    return false;
+                }
                 scope.jumpPageNum = scope.jumpPageNum.replace(/[^0-9]/g,'');
                 if(scope.jumpPageNum !== ''){
                     scope.conf.currentPage = scope.jumpPageNum;

@@ -1,9 +1,8 @@
 myApp.controller('articleList',['$scope','pageSize',function($scope,pageSize){
 	//获取搜索关键词
 	var keywords = Base.getUrlParam('keywords')?Base.getUrlParam('keywords'):'';
-
-	$scope.keywords = decodeURI(keywords) ;
-
+	$scope.keywords=keywords = decodeURIComponent(keywords) ;
+	// keywords=decodeURIComponent(keywords);
 	//获取二级导航
 	//获取一级标题
 	var id = Base.getUrlParam('id')?Base.getUrlParam('id'):'';
@@ -122,7 +121,9 @@ myApp.controller('articleList',['$scope','pageSize',function($scope,pageSize){
                             $scope.dataOther = res.dataResult;
                             $scope.paginationConf.totalItems = res.dataResult.count;
 							$scope.$broadcast('reset');
+
                         })
+						document.title = serverConstant_GuideEnum[$scope.paginationConf.guide.substr(0,1)]+'-中国破产法论坛网';
 
                     }
                 }

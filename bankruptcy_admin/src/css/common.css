@@ -32,3 +32,10 @@
 	line-height: 30px;
 	margin-top: 16px;
 }
+.uploader-list img{
+	width: 100px;
+	height: 100px;
+}
+#fileList .tpl-table-black-operation{
+	margin: 5px 0;
+}

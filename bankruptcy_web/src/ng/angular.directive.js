@@ -174,7 +174,10 @@ myApp.directive('myPagination',[function(){
             };
 
             // 跳转页
-            scope.jumpToPage = function(){
+            scope.jumpToPage = function(e){
+                if(e.keyCode!=13){
+                    return false;
+                }
                 scope.jumpPageNum = scope.jumpPageNum.replace(/[^0-9]/g,'');
                 if(scope.jumpPageNum !== ''){
                     scope.conf.currentPage = scope.jumpPageNum;
@@ -236,6 +239,30 @@ myApp.directive('header',[function(){
         },
         link:function(scope){
             scope.search = function(){
+                if (!scope.keywords){
+                    Base.alert('请输入搜索关键字','error');
+                    return false;
+                }
+                if(scope.keywords){
+                    location.href = '../searchList/list.html?keywords='+encodeURIComponent(encodeURIComponent(scope.keywords));
+
+                }else{
+                    location.href = '../searchList/list.html?keywords=';
+
+                }
+            }
+
+            scope.enterSearch = function(e){
+
+                if(e.keyCode!=13){
+                    return false;
+                }
+
+                if (!scope.keywords){
+                    Base.alert('请输入搜索关键字','error');
+                    return false;
+                }
+
                 if(scope.keywords){
                     location.href = '../searchList/list.html?keywords='+encodeURIComponent(encodeURIComponent(scope.keywords));
 

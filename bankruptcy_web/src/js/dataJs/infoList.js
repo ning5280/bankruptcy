@@ -44,32 +44,43 @@ myApp.controller('articleList',['$scope','$sce',function($scope,$sce){
                     $scope.dataAll = dataDjson;
                     $scope.content=$sce.trustAsHtml($scope.dataAll.articleHtmlContent);
                 })
+                
+                
+                //相关文章的获取
+                Base.ajax({
+			        url:appConfig.serverPath+'article/relaList',
+			        data:{pageSize:9,id:dataDjson.id,title:dataDjson.title},
+			        loading:true,
+			        success:function(res){
+			            if(res.dataStatus=='t1'){
+			                $scope.$apply(function(){
+			                    $scope.dataList = res.dataResult.list;
+			                    
+								setTimeout(function(){
+									var middleHeight = $('.d-ct-middle').height();
+									var articleHeight = $('.d-ct-article').height();
+									var leftHeight = $('.d-ct-left').height();
+									console.log(middleHeight);
+									console.log(articleHeight);
+									if(middleHeight<articleHeight){
+										$('.d-ct-middle').height(articleHeight);
+									}
+								},1000)
+								
+								
+			                })
+			            }
+			            
+			            
+			        }
+			    })
+            }else if(res.dataStatus=='00400'){
+            	Base.alert(res.dataMessage);
             }
         }
     })
 	
-    Base.ajax({
-        url:appConfig.serverPath+'article/pageList',
-        data:{pageSize:3},
-        loading:true,
-        success:function(res){
-        	console.log(res)
-            if(res.dataStatus=='t1'){
-                $scope.$apply(function(){
-                    $scope.dataList = res.dataResult.list;
-                })
-            }
-            
-//          var middleHeight = $('.d-ct-content').height();
-//			var articleHeight = $('.d-ct-article').height();
-//			var leftHeight = $('.d-ct-left').height();
-//			console.log(middleHeight);
-//			console.log(articleHeight);
-//			if(middleHeight<articleHeight){
-//				$('.d-ct-middle').height(articleHeight);
-//			}
-        }
-    })
+    
 }])
 
 $(function(){

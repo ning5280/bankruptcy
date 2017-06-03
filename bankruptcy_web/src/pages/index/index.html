@@ -2,196 +2,56 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title></title>
-	<link rel="stylesheet" href="../../css/plugs.css" />
-	<link rel="stylesheet" href="../../css/index.css" />
-	<link rel="stylesheet" href="../../static/swiper/swiper-3.4.1.min.css">
-	<link rel="stylesheet" href="../../static/swiper/animate.min.css">
+	<title>中国破产法论坛网</title>
+	<link href="../../images/favicon.ico" rel="shortcut icon">
+	<!--<link rel="stylesheet" href="../../css/plugs.css?rev=@@hash" />-->
+	<link rel="stylesheet" href="../../css/index.css?rev=@@hash" />
+	<link rel="stylesheet" href="../../static/swiper/swiper-3.4.1.min.css?rev=@@hash">
+	<link rel="stylesheet" href="../../static/swiper/animate.min.css?rev=@@hash">
+	<link rel="stylesheet" href="../../static//icon/iconfont.css">
 	<!-- 公共插件打包 比如jquery -->
 	<script src="../../js/plugs.js?rev=@@hash"></script>
+	<script src="../../static/layer/build/layer.js"></script>
+	<script type="text/javascript" src="../../static/swiper/swiper-3.4.1.min.js?rev=@@hash"></script>
 	<!-- domjs中所有特效打包  commonjs 公共方法打包  config打包-->
 	<script src="../../js/index.js?rev=@@hash"></script>
+	<!-- 底部轮播 -->
+	<!--<script type="text/javascript" src="../../static/scroll/jQuery-easing.js"></script>
+	<script type="text/javascript" src="../../static/scroll/jQuery-jcImgScroll.js"></script>-->
+	<!--<script type="text/javascript" src="../../static/scroll/3d.js"></script>-->
+	
 	<!-- angular相关设置打包  module名 myApp -->
 	<script src="../../js/ng.js?rev=@@hash"></script>
-	<!-- swiper -->
-	<script type="text/javascript" src="../../static/swiper/swiper-3.4.1.min.js">
-	</script>
-	<style>
-		html,
-		body {
-			position: relative;
-			height: 100%;
-		}
-
-		body {
-			background: #eee;
-			font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-			font-size: 14px;
-			color: #000;
-			margin: 0;
-			padding: 0;
-		}
-
-		.swiper-container {
-			width: 100%;
-			height: 100%;
-			margin-left: auto;
-			margin-right: auto;
-		}
-
-		.swiper-slide {
-			text-align: center;
-			font-size: 18px;
-			background: #fff;
-
-			/* Center slide text vertically */
-			display: -webkit-box;
-			display: -ms-flexbox;
-			display: -webkit-flex;
-			display: flex;
-			-webkit-box-pack: center;
-			-ms-flex-pack: center;
-			-webkit-justify-content: center;
-			justify-content: center;
-			-webkit-box-align: center;
-			-ms-flex-align: center;
-			/*-webkit-align-items: center;*/
-			/*align-items: center;*/
-		}
-		
-			*{
-				margin: 0;
-				padding: 0;
-			}
-				
-			.content-carousel .box{
-				/*margin-top: 300px;*/
-				width: 100%;
-				height: 530px;
-
-				position: relative;
-			}
-
-			.list{
-				width: 800px;
-				height: 520px;
-				overflow: hidden;
-				position: absolute;
-				left: 50%;
-				margin-left: -300px;
-			}
-
-			.btn{
-				position: absolute;
-				top: 50%;
-				margin-top: -50px;
-				width: 60px;
-				height: 100px;
-				line-height: 100px;
-				font-size: 30px;
-				color: white;
-				text-decoration: none;
-				text-align: center;
-				background: rgba(0,255,0,.5);
-				cursor: pointer;
-			}
-			.next{
-				right: 0;
-			}
-
-			.y-eighthSection .content-carousel li{
-				position: absolute;
-				top: 0;
-				left: 0;
-				list-style: none;
-				/*opacity: 0;*/
-				transition: all 0.3s ease-out;
-			}
-			.p1{
-				transform:translate3d(-200px,0,0) scale(0.81);
-			}
-			.p2{
-				transform:translate3d(0px,0,0) scale(0.81);
-				transform-origin:0 50%;
-				opacity: 0.8;
-				z-index: 2;
-			}
-			.p3{
-				transform:translate3d(200px,0,0) scale(1);
-				z-index: 3;
-				opacity: 1;
-			}
-			.p4{
-				transform:translate3d(400px,0,0) scale(0.81);
-				transform-origin:100% 50%;
-				opacity: 0.8;
-				z-index: 2;
-			}
-			.p5{
-				transform:translate3d(600px,0,0) scale(0.81);
-			}
-			.p6{
-				transform:translate3d(800px,0,0) scale(0.81);
-			}
-			.p7{
-				transform:translate3d(1000px,0,0) scale(0.81);
-			}
-
-			.buttons{
-				position: absolute;
-				width: 800px;
-				height: 30px;
-				bottom: 0;
-				left: 50%;
-				margin-left: -300px;
-				text-align: center;
-				padding-top: 10px;
-			}
-			.buttons a{
-				display: inline-block;
-				width: 35px;
-				height: 5px;
-				padding-top: 4px;
-				cursor: pointer;
-			}
-			.y-eighthSection .content-carousel span{
-				display: block;
-				width: 35px;
-				height: 1px;
-				background: red;
-			}
-			.y-eighthSection .blue{
-				background: blue;
-			}
-
-			
-			
-	</style>
+	<script src="../../js/datajs/viewchange.js?rev=@@hash"></script>
+	<script src="../../js/datajs/homes.js?rev=@@hash"></script>
+	<script src="../../js/datajs/home.js?rev=@@hash"></script>
+	<!--<script src="../../js/domjs/home.js?rev=@@hash"></script>-->
+	
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="homeList">
 	<!--header-->
-	<div class="d-header" style="position: fixed;top: 0;z-index: 100;">
+	<div class="d-header" style="position: fixed;top: 0;z-index:999;">
 		<div class="d-wrapp">
 			<!--LOGO-->
-			<a href="javascript:;"><img src="../../images/logo.png" alt="" class="d-logo" /></a>
+			<a href="./index.html"><img src="../../images/logo.jpg" alt="" class="d-logo" /></a>
 			<!--LOGO-->
 			<!--nav-->
 			<ul class="d-nav">
-				<li class="d-active"><a href="javascript:;">通知公告</a><span class="d-red-line"></span></li>
+				<li class=""><a href="javascript:;">通知公告</a><span class="d-red-line"></span></li>
 				<li><a href="javascript:;">成果展示</a><span class="d-red-line"></span></li>
 				<li><a href="javascript:;">新闻资讯</a><span class="d-red-line"></span></li>
 				<li><a href="javascript:;">司法案例</a><span class="d-red-line"></span></li>
 				<li><a href="javascript:;">法律文本</a><span class="d-red-line"></span></li>
 				<li><a href="javascript:;">关于我们</a><span class="d-red-line"></span></li>
-				
+				<li><a href="javascript:;" style="color: #B9B9B9;" class="disabled">敬请期待</a><span></span></li>
 			</ul>
 			<!--nav-->
 			<!--search-->
 			<div class="d-g-search">
-				<input type="text" />
+				<input type="text" class="indexSearchInputNam"/>
 				<!--搜索的图标-->
-				<a href="javascript:;" class="d-g-sear-icon"><img src="../../images/1.png" alt="" /></a>
+				<a href="javascript:;" class="d-g-sear-icon indexSearchNam"><img src="../../images/1.png" alt="" /></a>
 			</div>
 			<!--search-->
 		</div>
@@ -199,62 +59,81 @@
 	<!--header-->
 	<!-- 第一板块 -->
 	<!-- 第一板块 -->
-	<div class="swiper-container swiper-container-v">
-		<div class="swiper-wrapper">
+	<div class="y-container">
+		<div class="subContainer">
 			<!-- 第一板块 -->
-			<div class="y-secondSection common swiper-slide" style="flex-direction: column;">
+			<div class="y-secondSection common" style="flex-direction: column;">
 				<!--<div class="content">-->
 					<div class="swiper-container-nam">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
 								<div class="swiperBox-nam">
-									<p class="swiper-title-nam animated ">僵尸企业处置工作专题研讨会</p>
-									<p class="swiper-text-nam animated">
-										僵尸企业处置与破产审判工作专题研讨会
+									<p class="swiper-title-nam animated">论坛 | 第八届中国破产法论坛</p>
+									<p class="swiper-text-nam  animated">
+										暨《企业破产法》实施十周年几年研讨会
 									</p>
 									<div class="swiper-view-nam animated">
-										<a href="javascript:;" >查看更多</a>
+										<a href="../listInfo/info.html?id=092296e4ac2840a995f6f410436aeb13" target="_blank">查看更多</a>
 									</div>
 									
 								</div>
 								<div class="swiperImg-nam">
-									<div class="ImgBook ImgBook-one">
-										
+									<div class="ImgBook ImgBook-three">
+										<img src="../../images/logored.png"/>
 									</div>
 								</div>
 							</div>
 							<div class="swiper-slide sild-one ">
 								<div class="swiperBox-nam">
-									<p class="swiper-title-nam animated">僵尸企业处置工作专题研讨会</p>
+									<p class="swiper-title-nam animated">关于破产法域外效力的规定评定</p>
 									<p class="swiper-text-nam  animated">
-										僵尸企业处置与破产审判工作专题研讨会
+										破产法的域外效力（实用地域范围），即一国的破产程序<br />对位于其他国家或法域的破产人财产是否有效...
 									</p>
 									<div class="swiper-view-nam animated">
-										<a href="javascript:;" >查看更多</a>
+										<a href="../listInfo/info.html?id=6251c9480d5a4bfd84c95f1d4d24c798" target="_blank">查看更多</a>
 									</div>
 									
 								</div>
 								<div class="swiperImg-nam">
 									<div class="ImgBook ImgBook-two">
-										
+										<img src="../../images/jiaoshou.png"/>
 									</div>
 									
 								</div>
 							</div>
 							<div class="swiper-slide">
 								<div class="swiperBox-nam">
-									<p class="swiper-title-nam animated">僵尸企业处置工作专题研讨会</p>
-									<p class="swiper-text-nam  animated">
+									<p class="swiper-title-nam animated ">著作力荐 | 破产法文书库</p>
+									<p class="swiper-text-nam animated">
 										僵尸企业处置与破产审判工作专题研讨会
 									</p>
-									<div class="swiper-view-nam animated">
+									<!--<div class="swiper-view-nam animated">
 										<a href="javascript:;" >查看更多</a>
+									</div>-->
+									
+								</div>
+								<div class="swiperImg-nam">
+									<div class="ImgBook ImgBook-one">
+										<img src="../../images/book.png"/>
+									</div>
+								</div>
+							</div>
+
+	
+							<div class="swiper-slide">
+								<div class="swiperBox-nam">
+									<p class="swiper-title-nam animated">潘光林：破产审判何以温州？</p>
+									<p class="swiper-text-nam  animated">
+										2011年下半年发生在温州的局部金融风波让温州面临严峻的经济形势，随之而来的是温州法院所需要面临的数量暴增的破产案件。
+									</p>
+									<div class="swiper-view-nam animated">
+										<a href="../listInfo/info.html?id=00ad2e542be34498863a9516c49867d2" target="_blank" >查看更多</a>
 									</div>
 									
 								</div>
 								<div class="swiperImg-nam">
 									<div class="ImgBook ImgBook-three">
-										
+										<img src="../../images/pgl.png"/>
 									</div>
 								</div>
 							</div>
@@ -277,13 +156,13 @@
 							</div>
 							<div class="subcontent-rt">
 								<div class="content-lt">
-									<img src="../../images/result.png" alt="" />
+									<img src="../../images/wresulte.png" alt="" />
 								</div>
 								<div class="content-rt subcontent-rt-rt">
-									<span>成果展示</span>
-									<span>协会最新成果展示</span>
-									<span>成果展示</span>
-									<span>协会最新成果展示</span>
+									<a href="../articleList/list.html?guide=4_1">论文成果</a>
+									<a href="../articleList/list.html?guide=4_2">调研报告</a>
+									<a href="../articleList/list.html?guide=4_3">著作推荐</a>
+									
 								</div>
 							</div>
 						</div>
@@ -299,13 +178,12 @@
 							</div>
 							<div class="subcontent-rt">
 								<div class="content-lt">
-									<img src="../../images/person1.png" alt="" />
+									<img src="../../images/wperson.png" alt="" />
 								</div>
 								<div class="content-rt subcontent-rt-rt">
-									<span>成果展示</span>
-									<span>协会最新成果展示</span>
-									<span>成果展示</span>
-									<span>协会最新成果展示</span>
+									<a href="../articleList/list.html?guide=3_1">通知</a>
+									<a href="../articleList/list.html?guide=3_2">公告</a>
+									
 								</div>
 							</div>
 						</div>
@@ -321,44 +199,35 @@
 							</div>
 							<div class="subcontent-rt">
 								<div class="content-lt">
-									<img src="../../images/newnam.png" alt="" />
+									<img src="../../images/wnewnam.png" alt="" />
 								</div>
 								<div class="content-rt subcontent-rt-rt">
-									<span>成果展示</span>
-									<span>协会最新成果展示</span>
-									<span>成果展示</span>
-									<span>协会最新成果展示</span>
+									<a href="../viewList/list.html?guide=2_1">学会新闻</a>
+									<a href="../viewList/list.html?guide=2_2">学界动态</a>
+									<a href="../viewList/list.html?guide=2_3">域外动态</a>
+									
 								</div>
 							</div>
 						</div>
-						<div class="subcontent">
+						<div class="subcontent nohovernam">
 							<div class="sub">
 								<div class="content-lt">
-									<img src="../../images/qidainam.png" alt="" />
+									<img src="../../images/qidaigray.png" alt="" />
 								</div>
 								<div class="content-rt">
 									<p>敬请期待</p>
 									<p>期待只为更美好</p>
 								</div>
 							</div>
-							<div class="subcontent-rt">
-								<div class="content-lt">
-									<img src="../../images/qidainam.png" alt="" />
-								</div>
-								<div class="content-rt subcontent-rt-rt">
-									<span>成果展示</span>
-									<span>协会最新成果展示</span>
-									<span>成果展示</span>
-									<span>协会最新成果展示</span>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 				<!--</div>-->
+				
 			</div>
 			<!-- 第Yi板块 -->
 			<!--第二板块-->
-			<div class="y-thirdSection common swiper-slide" id="thirdSection">
+			<div class="y-thirdSection common" id="thirdSection">
 				<div class="subSlide">
 					<div class="title">
 						<div class="name">
@@ -367,8 +236,8 @@
 						</div>	
 					</div>
 					<div class="content">
-						<div class="subContent">
-							<div class="subTitle">
+						<div class="subContent" style="overflow: hidden;">
+							<!--<div class="subTitle">
 								<span>第21届中美法律交流北京研讨会参会公告</span>
 							</div>
 							<div class="sub">
@@ -385,114 +254,104 @@
 									<li>中国商务部</li>
 									<li>中国商务部</li>
 								</ul>
-							</div>
+							</div>-->
+							<iframe ng-src={{"../iframe/inform.html?id="+dataAll['3_1'][0]['id']}} frameborder="no" height="100%" width="100%"></iframe>
 						</div>
 						<div class="contentList">
-							<ul>
-								<li>
-									<p>公告4 我们做出炫酷屌炸天的破产法论坛网站</p>
-									<p>2017-07-09</p>
+							<ul  style="overflow: hidden;height: 94px;">
+								<li ng-repeat="data in dataAll['3_1'].slice(0,3)" ng-click="announce(data.id)">
+									<p>公告<span style="margin-right:5px;">{{$index+1}}</span> {{data.title}}</p>
+									<a ng-bind="data.updateTime.slice(0,10)"></a>
 								</li>
-								<li>
-									<p>公告4 我们做出炫酷屌炸天的破产法论坛网站</p>
-									<p>2017-07-09</p>
-								</li>
-								<li>
-									<p>公告4 我们做出炫酷屌炸天的破产法论坛网站</p>
-									<p>2017-07-09</p>
-								</li>
-								<li>
-									<p>公告4 我们做出炫酷屌炸天的破产法论坛网站</p>
-									<p>2017-07-09</p>
-								</li>
+								
 							</ul>
 						</div>
 					</div>
+					
 				</div>
+				<!--<div class="arrow"><i class="icon iconfont icon-sks"></i></div>-->
 			</div>
 			<!--第二板块-->
 			<!-- 第三板块 -->
-			<div class="y-fourthSection common swiper-slide" id="fourthSection">
+			<div class="y-fourthSection common" id="fourthSection">
 				<div class="subSlide-nam">
 					
 					<div class="title">
 						<div class="name">
-							<h3>成果展示</span>
-							<h4><span>NEW </span>ACHIEVEMENT</h4>
+							<h3 style="color:#fff;">成果展示</span>
+							<h4 style="color:#fff;"><span>NEW </span>ACHIEVEMENT</h4>
 						</div>	
 					</div>
-
 					
 					<div class="content">
 						<div class="subcontent">
 							<div class="subcontentHoverBefor">
 								<div class="resultImgNam">
-									<img src="../../images/layertext.png"/>
+									<img src="../../images/lunwen.png"/>
 								</div>
 								<div class="resultTitleNam">
 									<span>论文成果</span>
-									<p>阳光老师就是这么帅这么酷</p>
+									<p>最新学术论文成果动态</p>
 								</div>
 								<ul class="resultContentNam">
-									<li><a href="javascript:;">企业破产真知启示录</a></li>
-									<li><a href="javascript:;">有关企业破产报税错误渠道</a></li>
-									<li><a href="javascript:;">企业破产债务处理办法</</a>li>
-									<li><a href="javascript:;">有关我们</a></li>
-									<li class="resultMoreNam animated">
-										<a href="javascript:;">了解更多</a>
-									</li>
+
+									<li ng-repeat="data in dataAll['4_1'].slice(0,3)"><a  target="_blank" ng-href="../listInfo/info.html?id={{data.id}}" ng-bind="data.title"></a></li>
+									
+
 								</ul>
+								<div class="resultMoreNam ">
+										<a href="../articleList/list.html?guide=4_1">了解更多</a>
+								</div>
 							</div>
 						</div>
 						<div class="subcontent">
 							<div class="subcontentHoverBefor">
 								<div class="resultImgNam">
-									<img src="../../images/layertext.png"/>
+									<img src="../../images/recoder.png"/>
 								</div>
 								<div class="resultTitleNam">
-									<span>论文成果</span>
-									<p>阳光老师就是这么帅这么酷</p>
+									<span>调研报告</span>
+									<p>了解、剖析事物时下案件展趋向</p>
 								</div>
 								<ul class="resultContentNam">
-									<li><a href="javascript:;">企业破产真知启示录</a></li>
-									<li><a href="javascript:;">有关企业破产报税错误渠道</a></li>
-									<li><a href="javascript:;">企业破产债务处理办法</</a>li>
-									<li><a href="javascript:;">有关我们</a></li>
-									<li class="resultMoreNam animated">
-										<a href="javascript:;">了解更多</a>
-									</li>
+									<li ng-repeat="data in dataAll['4_2'].slice(0,3)"><a  target="_blank" ng-href="../listInfo/info.html?id={{data.id}}" ng-bind="data.title"></a></li>
+									
+
 								</ul>
+								<div class="resultMoreNam ">
+										<a href="../articleList/list.html?guide=4_2">了解更多</a>
+								</div>
 							</div>
 						</div>
 						<div class="subcontent">
 							<div class="subcontentHoverBefor">
 								<div class="resultImgNam">
-									<img src="../../images/layertext.png"/>
+									<img src="../../images/tuijiazhuzuo.png"/>
 								</div>
 								<div class="resultTitleNam">
-									<span>论文成果</span>
-									<p>阳光老师就是这么帅这么酷</p>
+									<span>著作推荐</span>
+									<p>优质团队的强烈推荐</p>
 								</div>
 								<ul class="resultContentNam">
-									<li><a href="javascript:;">企业破产真知启示录</a></li>
-									<li><a href="javascript:;">有关企业破产报税错误渠道</a></li>
-									<li><a href="javascript:;">企业破产债务处理办法</</a>li>
-									<li><a href="javascript:;">有关我们</a></li>
-									<li class="resultMoreNam animated">
-										<a href="javascript:;">了解更多</a>
-									</li>
+									<li ng-repeat="data in dataAll['4_3'].slice(0,3)"><a ng-href="../listInfo/info.html?id={{data.id}}" ng-bind="data.title"  target="_blank"></a></li>
+									
+									
 								</ul>
+								<div class="resultMoreNam">
+										<a href="../articleList/list.html?guide=4_3">了解更多</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				<!--<div class="arrow"><i class="icon iconfont icon-sks"></i></div>-->
 			</div>
 			<!-- 第三板块 -->
 
 			<!-- 第四板块 -->
-			<div class="y-fifthSection common swiper-slide" id="fifthSection">
+			<div class="y-fifthSection common" id="fifthSection">
 				<div class="subSlide">
-					<div class="title">
+					<div class="title" style="margin-top:10px;">
 						<div class="name">
 							<h3>新闻资讯</span>
 							<h4><span>THE </span>NEWS</h4>
@@ -501,64 +360,98 @@
 					<div class="content">
 						<div class="content-lt">
 							<ul>
-								<li><span class="animated">学会新闻</span><a href="javascript:;"></a></li>
-								<li><span class="animated">学会新闻</span><a href="javascript:;"></a></li>
-								<li><span class="animated">学会新闻</span><a href="javascript:;"></a></li>
-								<li><span class="animated">学会新闻</span><a href="javascript:;"></a></li>
+								<li data-nam-id="0"><span class="animated bindClick leftmovenam">学会新闻</span><a class='shenleftnam' href="javascript:;"><img src="../../images/arrow.png" alt=""></a></li>
+								<li data-nam-id="1"><span class="animated bindClick">学界动态</span><a href="javascript:;"><img src="../../images/arrow.png" alt=""></a></li>
+								<li data-nam-id="1"><span class="animated bindClick">域外动态</span><a href="javascript:;"><img src="../../images/arrow.png" alt=""></a></li>
+								<!--<li><span class="animated bindClick">学会新闻</span><a href="javascript:;"><img src="../../images/arrow.png" alt=""></a></li>-->
 							</ul>
 						</div>
 						<div class="content-rt">
 							<div class="text">
 								<div class="textImg animated">
-									<img src="../../images/新闻-01.png" alt="">
+									<img ng-src="{{dataAll['2_1'][0]['smallImage']|pic}}" alt="" style="width:100%;height:100%">
 								</div>
-								<h4 class="animated">徐阳光成为中国破产法法律最高代表人</h4>
-								<p class="animated">电子商务法，是政府调整、企业和个人以数据电文为交易手段，通过信息网络所产生的，因交易形式所引起的各种商事交易关系，以及与这种商事交易关系密切相关的社会关系、政府管理关系的法律规范的总称。 2013年12月7号，中国全国人大常委会正式启动了《电子商务法》的立法进程。2015年8月25日上午，“网规优化工程”研讨会在法律出版社举办，据了解，我国电子商务立法草案有望年内完成。Ώ]  来自全国人大财经委、工商总局、商务部、发改委等政府部门，中国消费者协会、中国电子商务...</p>
-								<a href="javascript:;" class="animated">READ MORE</a>
+								<h4 class="animated" ng-bind="dataAll['2_1'][0]['title']"></h4>
+								<p class="animated" ng-bind="dataAll['2_1'][0]['remarks']"></p>
+								<a href="../listInfo/info.html?id={{dataAll['2_1'][0]['id']}}" target="_blank" class="animated" >READ MORE</a>
 							</div>
 							<div class="imgList">
-								<div class="img-list animated">
+								<div class="img-list animated" ng-repeat="data in dataAll['2_1'].slice(1,4)">
 									<div class="subImg">
-										<img src="../../images/新闻-小-01.png" alt="">
+										<div class="mockNam"></div>
+										<img ng-src="{{data['smallImage']|pic}}" alt="" style="width:100%;height:100%">
 									</div>
 									<div class="squares">
-										<p>张洪茂成为中国高法律电商<br />合作代表人</p>
+										<p ng-bind="data['title'].substring(0,27)"></p>
 									</div>
 									<div class="newMoreNam">
-										<a href="javascript:;">READ MORE</a>
+										<a href="../listInfo/info.html?id={{data['id']}}"  target="_blank">READ MORE</a>
 									</div>
 								</div>
 								
-								<div class="img-list animated">
-									<div class="subImg">
-										<img src="../../images/新闻-小-02.png" alt="">
-									</div>
-									<div class="squares">
-										<p>张洪茂成为中国高法律电商<br />合作代表人</p>
-									</div>
-									<div class="newMoreNam">
-										<a href="javascript:;">READ MORE</a>
-									</div>
-								</div>
-								<div class="img-list animated">
-									<div class="subImg">
-										<img src="../../images/新闻-小-03.png" alt="">
-									</div>
-									<div class="squares">
-										<p>张洪茂成为中国高法律电商<br />合作代表人</p>
-									</div>
-									<div class="newMoreNam">
-										<a href="javascript:;">READ MORE</a>
-									</div>
-								</div>
+								
 							</div>
 						</div>
+						<div class="content-rt">
+							<div class="text">
+								<div class="textImg animated">
+									<img ng-src="{{dataAll['2_2'][0]['smallImage']|pic}}" alt="" style="width:100%;height:100%">
+								</div>
+								<h4 class="animated" ng-bind="dataAll['2_2'][0]['title']"></h4>
+								<p class="animated" ng-bind="dataAll['2_2'][0]['remarks']"></p>
+								<a href="../listInfo/info.html?id={{dataAll['2_2'][0]['id']}}" class="animated"  target="_blank">READ MORE</a>
+							</div>
+							<div class="imgList">
+								<div class="img-list animated" ng-repeat="data in dataAll['2_2'].slice(1,4)">
+									<div class="subImg">
+										<div class="mockNam"></div>
+										<img ng-src="{{data['smallImage']|pic}}" alt="" style="width:100%;height:100%">
+									</div>
+									<div class="squares">
+										<p ng-bind="data['title'].substring(0,27)"></p>
+									</div>
+									<div class="newMoreNam">
+										<a href="../listInfo/info.html?id={{data['id']}}"  target="_blank">READ MORE</a>
+									</div>
+								</div>
+								
+								
+							</div>
+						</div>
+						<div class="content-rt">
+							<div class="text">
+								<div class="textImg animated">
+									<img ng-src="{{dataAll['2_3'][0]['smallImage']|pic}}" alt="" style="width:100%;height:100%">
+								</div>
+								<h4 class="animated" ng-bind="dataAll['2_3'][0]['title']"></h4>
+								<p class="animated" ng-bind="dataAll['2_3'][0]['remarks']"></p>
+								<a href="../listInfo/info.html?id={{dataAll['2_3'][0]['id']}}" class="animated"  target="_blank">READ MORE</a>
+							</div>
+							<div class="imgList">
+								<div class="img-list animated" ng-repeat="data in dataAll['2_3'].slice(1,4)">
+									<div class="subImg">
+										<div class="mockNam"></div>
+										<img ng-src="{{data['smallImage']|pic}}" alt="" style="width:100%;height:100%">
+									</div>
+									<div class="squares">
+										<p ng-bind="data['title'].substring(0,27)"></p>
+									</div>
+									<div class="newMoreNam">
+										<a href="../listInfo/info.html?id={{data['id']}}"  target="_blank">READ MORE</a>
+									</div>
+								</div>
+								
+								
+							</div>
+						</div>
+
 					</div>
 				</div>
+				<!--<div class="arrow"><i class="icon iconfont icon-sks"></i></div>-->
 			</div>
 			<!-- 第四板块 -->
 			<!-- 第五板块 -->
-			<div class="y-sixSection common swiper-slide" id="sixSection">
+			<div class="y-sixSection common" id="sixSection">
 				<div class="subSlide">
 					<div class="title">
 						<div class="name">
@@ -572,145 +465,142 @@
 								<span>裁判文书</span>
 							</div>
 							<div class="subImage"> 
-								<img src="../../images/裁判文书-1.png" alt="">
-								<div class="shade"><div class="circle"></div>固顶文章 全国首例应用破产信息网举办</div>
+								<img ng-src="{{dataAll['5_1'][0]['smallImage']|pic}}" alt="">
+								<div class="shade"><div class="circle"></div><a href="../listInfo/info.html?id={{dataAll['5_1'][0]['id']}}" ng-bind="dataAll['5_1'][0]['title']" target="_blank"></a></div>
 							</div>
 							<div class="subText">
 								<!--<span>2017/07/09</span>-->
-								<p>须为以财产给付为内容的请求权容的请求权。给付标的为劳务或者不作为的请求权。不能申报，但是，因它容的请求权。给付标的为劳务或者不作为的请求权。不能申报，但是，因它容的请求权。给付标的为劳务或者不作为的请求权。不能申报，但是，因它容的请求权。给付标的为劳务或者不作为的请求权。不能申报，但是，因它容的请求权。给付标的为劳务或者不作为的请求权。不能申报，但是，因它容的请求权。给付标的为劳务或者不作为的请求权。不能申报，但是，因它容的请求权。给付标的为劳务或者不作为的请求权。不能申报，但是，因它容的请求权。给付标的为劳务或者不作为的请求权。不能申报，但是，因它容的请求权。给付标的为劳务或者不作为的请求权。不能申报，但是，因它。给付标的为劳务或者不作为的请求权。不能申报，但是，因它们的不履行或者不适当履行而产生的赔偿请求权，为可以申报的债权...</p>
+								<p ng-bind="dataAll['5_1'][0]['remarks']"></p>
 							</div>
 							<div class="subList">
 								<ul>
-									<li><span>第21届中美法律交流北京研讨会在人民大..</span></li>
-									<li><span>第21届中美法律交流北京研讨会在人民大..</span></li>
-									<li><span>第21届中美法律交流北京研讨会在人民大..</span></li>
-									<li><span>第21届中美法律交流北京研讨会在人民大..</span></li>
-									<li><span>第21届中美法律交流北京研讨会在人民大..</span></li>
-									<li><span>第21届中美法律交流北京研讨会在人民大..</span></li>
-									<li><span>第21届中美法律交流北京研讨会在人民大..</span></li>
+									<li ng-repeat="data in dataAll['5_1'].slice(1,7)"><a ng-bind="data['title']" ng-href="../listInfo/info.html?id={{data['id']}}"  target="_blank"></a></li>
+									
 								</ul>
-								<div class="readMore">
-								<a href="javascript:;">READ MORE</a>
+								<div class="readMore" >
+								<a href="../articleList/list.html?guide=5_1">READ MORE</a>
 								</div>
 							</div>
 							
 						</div>
 						<div class="subcontent animated">
 							<div class="subTitle">
-								<span>裁判文书</span>
+								<span>案例分析</span>
 							</div>
-							<div class="subImage">
-								<img src="../../images/案例分析-2.png" alt="">
-								<div class="shade"><div class="circle"></div>固顶文章 全国首例应用破产信息网举办</div>
+							<div class="subImage"> 
+								<img ng-src="{{dataAll['5_2'][0]['smallImage']|pic}}" alt="">
+								<div class="shade"><div class="circle"></div><a href="../listInfo/info.html?id={{dataAll['5_2'][0]['id']}}" ng-bind="dataAll['5_2'][0]['title']"  target="_blank"></a></div>
 							</div>
 							<div class="subText">
 								<!--<span>2017/07/09</span>-->
-								<p>须为以财产给付为内容的请求权。给付标的为劳务或者不作为的请求权。不能申报，但是，因它们的不履行或者不适当履行而产生的赔偿请求权，为可以申报的债权...</p>
+								<p ng-bind="dataAll['5_2'][0]['remarks']"></p>
 							</div>
 							<div class="subList">
 								<ul>
-									<li><span>第21届中美法律交流北京研讨会在人民大..</span></li>
-									<li><span>第21届中美法律交流北京研讨会在人民大..</span></li>
-									<li><span>第21届中美法律交流北京研讨会在人民大..</span></li>
-									<li><span>第21届中美法律交流北京研讨会在人民大..</span></li>
-									<li><span>第21届中美法律交流北京研讨会在人民大..</span></li>
-									<li><span>第21届中美法律交流北京研讨会在人民大..</span></li>
-									<li><span>第21届中美法律交流北京研讨会在人民大..</span></li>
+									<li ng-repeat="data in dataAll['5_2'].slice(1,7)"><a ng-bind="data['title']" ng-href="../listInfo/info.html?id={{data['id']}}"  target="_blank"></a></li>
+									
 								</ul>
-								<div class="readMore">
-								<a href="javascript:;">READ MORE</a>
-							</div>
+								<div class="readMore" >
+								<a href="../articleList/list.html?guide=5_2">READ MORE</a>
+								</div>
 							</div>
 							
 						</div>
 
 					</div>
 				</div>
+				<!--<div class="arrow"><i class="icon iconfont icon-sks"></i></div>-->
 			</div>
 			<!-- 第六板块 -->
-			<div class="y-sevenSection common swiper-slide" id="sevenSection">
+			<div class="y-sevenSection common" id="sevenSection">
+				<div class="zhao"></div>
 				<div class="subSlide">
-					<div class="title">
+					<div class="title" style="margin-top:60px;">
 						<div class="name">
-							<h3>法律文本</span>
-							<h4><span>LEGAL </span>PROVOSIONS</h4>
+							<h3 style="color:#fff">法律文本</span>
+							<h4 style="color:#fff;"><span>LEGAL </span>PROVOSIONS</h4>
 						</div>	
 					</div>
 					<div class="content">
 						<div class="subContent">
 							<div class="content-lt">
-								<img src="../../images/法律文本-ico.png" alt="">
+								<img src="../../images/Big04.png" alt="">
 							</div>
 							<div class="content-rt">
 								<div class="text">
-									<p>国家法律文本</p>							
-									<div>2017新版权威核心期刊论文发表网站,论文发表周期短,免审稿费,可查稿...</div>
+									<p>国际法律文书</p>							
+									<div>其功能体现在社会作用和规范作用两个方面：社会作用在于通过体现各国的协调意志为各国统治阶级在国际交往中的需要服务；规范作用体现在指引、预测等方面。</div>
 								</div>	
 								<div class="shade">
 									<!--<div class="subShade"></div>-->
 									<div class="more">
-									<div>MORE</div>
-									</div>	
+									
+									</div>
+									<div class="moreLinkNam"><a href="../articleList/list.html?guide=6_3">M<br/>O<br/>R<br/>E</a></div>
 								</div>	
 							</div>
 						</div>
 						<div class="subContent">
 							<div class="content-lt">
-								<img src="../../images/法律文本-ico.png" alt="">
+								<img src="../../images/Big01.png" alt="">
 							</div>
 							<div class="content-rt">
 								<div class="text">
-									<p>国家法律文本</p>							
-									<div>2017新版权威核心期刊论文发表网站,论文发表周期短,免审稿费,可查稿...</div>
+									<p>地方法律文本</p>							
+									<div>地方法律文本立法机关制定或认可的，其效力不能及于全国，而只能在地方区域内发生法律效力的规范性法律文件。</div>
 								</div>	
 								<div class="shade">
 									<!--<div class="subShade"></div>-->
 									<div class="more">
-									<div>MORE</div>
-									</div>	
-								</div>	
+									
+									</div>
+									<div class="moreLinkNam"><a href="../articleList/list.html?guide=6_2">M<br/>O<br/>R<br/>E</a></div>
+								</div>
 							</div>
 						</div>
 						<div class="subContent">
 							<div class="content-lt">
-								<img src="../../images/法律文本-ico.png" alt="">
+								<img src="../../images/Big03.png" alt="">
 							</div>
 							<div class="content-rt">
 								<div class="text">
 									<p>国家法律文本</p>							
-									<div>2017新版权威核心期刊论文发表网站,论文发表周期短,免审稿费,可查稿...</div>
+									<div>法律文本是立法者主观意志和主观精神的客观化体现，是规范人们社会生活的重要依据。</div>
 								</div>	
 								<div class="shade">
 									<!--<div class="subShade"></div>-->
 									<div class="more">
-									<div>MORE</div>
-									</div>	
+									
+									</div>
+									<div class="moreLinkNam"><a href="../articleList/list.html?guide=6_1">M<br/>O<br/>R<br/>E</a></div>
 								</div>	
 							</div>
 						</div>
-						<div class="subContent">
+						<div class="subContent nohovers">
 							<div class="content-lt">
-								<img src="../../images/法律文本-ico.png" alt="">
+								<img src="../../images/Big02.png" alt="">
 							</div>
 							<div class="content-rt">
 								<div class="text">
-									<p>国家法律文本</p>							
-									<div>2017新版权威核心期刊论文发表网站,论文发表周期短,免审稿费,可查稿...</div>
+									<p>敬请期待</p>							
+									<div>期待只为更美好</div>
 								</div>	
 								<div class="shade">
 									<!--<div class="subShade"></div>-->
 									<div class="more">
-									<div>MORE</div>
-									</div>	
-								</div>	
+									
+									</div>
+									<div class="moreLinkNam"><a href="javascript:;" style="cursor: default;">M<br/>O<br/>R<br/>E</a></div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				<!--<div class="arrow"><i class="icon iconfont icon-sks"></i></div>-->
 			</div>
 			<!-- 第六板块 -->
 			<!-- 第七板块 -->
-			<div class="y-eighthSection common swiper-slide" id="eighthSection">
+			<div class="y-eighthSection common" id="eighthSection">
 				<div class="subSlide">
 					<div class="title">
 						<div class="name">
@@ -722,64 +612,80 @@
 						<div class="content-list">
 							<div class="subcontent">
 								<div class="content-lt">
-									<img src="../../images/书籍-ico.png" alt="">
+									<img src="../../images/shuji.png" alt="">
 								</div>
 								<div class="content-rt">
 									<div class="rt-top">
 										<span>中心简介</span>
-										<a href="javascript:;">MORE</a>
+										<a href="../articleList/list.html?guide=1_1">MORE</a>
 									</div>
 									<div class="rt-bottom">
-										<p>2017新版权威核心期刊论文发表网站,论文发表周期短,免审稿费,可查稿...</p>
+										<p>中国人民大学破产法研究中心成立于2006年，是经中国人民大学批准设立，研究中心秉承教学、研究、实践三位一体的理念，致力于破产立法和司法的进步，研究破产法的基础理论问题，关注破产法理论的发展动向，推动中国破产法制的进步。</p>
 									</div>
 								</div>
 							</div>
 							<div class="subcontent">
 								<div class="content-lt">
-									<img src="../../images/学会简介-ico.png" alt="">
+									<img src="../../images/xuehui.png" alt="">
 								</div>
 								<div class="content-rt">
 									<div class="rt-top">
-										<span>中心简介</span>
-										<a href="javascript:;">MORE</a>
+										<span>学会简介</span>
+										<a href="../articleList/list.html?guide=1_2">MORE</a>
 									</div>
 									<div class="rt-bottom">
-										<p>2017新版权威核心期刊论文发表网站,论文发表周期短,免审稿费,可查稿...</p>
+										<p>北京市破产法学会成立于2010年，由中国人民大学法学院、首都经济贸易大学法学院、北京市炜衡律师事务所等单位自愿联合发起成立，是经北京市民政局核准登记的非营利性社团法人，业务主管单位是北京市法学会。</p>
 									</div>
 								</div>
 							</div>
 							<div class="subcontent">
 								<div class="content-lt">
-									<img src="../../images/历届论坛-ico.png" alt="">
+									<img src="../../images/lijie.png" alt="">
 								</div>
 								<div class="content-rt">
 									<div class="rt-top">
-										<span>中心简介</span>
-										<a href="javascript:;">MORE</a>
+										<span>历届论坛</span>
+										<a href="../articleList/list.html?guide=1_3">MORE</a>
 									</div>
 									<div class="rt-bottom">
-										<p>2017新版权威核心期刊论文发表网站,论文发表周期短,免审稿费,可查稿...</p>
+										<p>
+中国破产法论坛是中国人民大学破产法研究中心联合最高人民法院民二庭共同创办的破产法领域最高规格、最大规模、最为权威的品牌学术活动，自2008年至今，共举办了七届大规模的论坛和六次破产法专题研讨会。&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
 									</div>
 								</div>
 							</div>
 							<div class="subcontent">
 								<div class="content-lt">
-									<img src="../../images/组织协会-ico.png" alt="">
+									<img src="../../images/zuzhi.png" alt="">
 								</div>
 								<div class="content-rt">
 									<div class="rt-top">
-										<span>中心简介</span>
-										<a href="javascript:;">MORE</a>
+										<span>研究团队</span>
+										<a href="../articleList/list.html?guide=1_4">MORE</a>
 									</div>
 									<div class="rt-bottom">
-										<p>2017新版权威核心期刊论文发表网站,论文发表周期短,免审稿费,可查稿...</p>
+										<p>
+我们团队涵盖理论界与实务界，形成了老中青相结合的人才梯队。我们将秉承“海纳百川，有容乃大”之发展理念，陆续聘请立法机关、司法机关、实务部门、高等院校以及国外破产法领域的专家学者加入研究团队，充实队伍。
+</p>
 									</div>
 								</div>
 							</div>
 						</div>
 
 					</div>
-
+					<!--轮播-->
+					<!--<div class="bottomRollNam" id="demo1">
+				            <ul>
+				                <li><a href="http://www.lanrentuku.com/" target="_blank" path="../../images/bingbing.png" title="tttt1"></a></li>
+				                <li><a href="http://www.lanrentuku.com/" target="_blank" path="../../images/bingbing.png" title="tttt2"></a></li>
+				                <li><a href="http://www.lanrentuku.com/" target="_blank" path="../../images/bingbing.png" title="tttt3"></a></li>
+				            </ul>
+				           
+					</div>
+					 <ul class="pageNam">
+				            	
+				      </ul>-->
+					<!--轮播-->
 					<!-- 尾板块 -->
 					<div class="footSection">
 						<div class="content">
@@ -787,38 +693,45 @@
 								<ul>
 									<li>	
 										<div>
-											<img src="../../images/地址-ico.png" alt="">
+											<img src="../../images/dizhi.png" alt="">
 										</div>
 										<span>地址：</span>
 										<p>北京市海淀区中关村大街59号 明德法学楼</span>
 									</li>
 									<li>
 										<div>
-											<img src="../../images/邮箱-ico.png" alt="">
+											<img src="../../images/youxiang.png" alt="">
 										</div>
-										<span>地址：</span>
+										<span>邮箱：</span>
 										<p>bankruptcylaw@163.com</p>
 									</li>
 									<li>
-										<div><img src="../../images/电话-Ico.png" alt=""></div><span>地址：</span>
-										<p>010-82500351  131-6666-6666</p>
+										<div><img src="../../images/phone.png" alt=""></div><span>电话：</span>
+										<p>010-82500351  </p>
 									</li>
 								</ul>
 							</div>
 							<div class="content-rt">
 								<div class="code">
-
+									<!--<img src="../../images/code.png"/>-->
 								</div>
 							</div>
 						</div>
 					</div>
 					<!-- 尾板块 -->
+
+					
 				</div>
+				<!--footer-->
+				
+				<!--footer-->
+				<!--<div class="arrow"><i class="icon iconfont icon-sks"></i></div>-->
 			</div>
+			<div class="common"><footer></footer></div>
 			<!-- 第八板块 -->
 			<!--轮播板块-->
-			<div class="y-nineSection common swiper-slide">
-					<!--<div class="content-carousel" style="width:800px">-->
+			<!--<div class="y-nineSection common swiper-slide">
+					<div class="content-carousel" style="width:800px">
 							<div class="box">
 								<div class="list">
 									<ul>
@@ -846,17 +759,15 @@
 									</ul>
 								</div>
 
-								
-
-										<div class="buttons">
-											<a href="javascript:;"><span class="blue"></span></a>
-											<a href="javascript:;"><span></span></a>
-											<a href="javascript:;"><span></span></a>
-											<a href="javascript:;"><span></span></a>
-											<a href="javascript:;"><span></span></a>
-											<a href="javascript:;"><span></span></a>
-											<a href="javascript:;"><span></span></a>
-										</div>
+								<div class="buttons">
+									<a href="javascript:;"><span class="blue"></span></a>
+									<a href="javascript:;"><span></span></a>
+									<a href="javascript:;"><span></span></a>
+									<a href="javascript:;"><span></span></a>
+									<a href="javascript:;"><span></span></a>
+									<a href="javascript:;"><span></span></a>
+									<a href="javascript:;"><span></span></a>
+								</div>
 							</div>
 						</div>
 						<div class="intro">
@@ -868,371 +779,22 @@
 						</div>
 			
 			
-			轮播</div>
+			轮播</div>-->
 		</div>
+		
 	</div>
-
-	<script>
-		$(".swiper-container-nam .swiper-slide").eq(0).find(".swiper-title-nam").addClass("fadeInUp"); 
-	
-		  setTimeout(function(){
-			  $(".swiper-container-nam .swiper-slide").eq(0).find(".swiper-text-nam").addClass("fadeInUp");
-
-		  },300);
-		  setTimeout(function(){
-			  $(".swiper-container-nam .swiper-slide").eq(0).find(".swiper-view-nam").addClass("fadeInUp");
-		  },500);
-		   $(".swiper-container-nam .swiper-slide").eq(0).find(".ImgBook").addClass("aa");
-
-    var mySwiperss = new Swiper('.swiper-container-nam',{
-			loop:true,
-			autoplay : 8000,
-			speed:100,
-//			direction: 'vertial',
-//			virtualTranslate : true,
-			prevButton:'.swiper-button-prev',
-			nextButton:'.swiper-button-next',	
-			autoplayDisableOnInteraction: false,
-			paginationClickable :true,
-		
-			 pagination: '.swiper-pagination-nam',
-			onSlideChangeStart: function(swiper){
-
-			$(".swiper-container-nam .swiper-slide .swiper-title-nam").removeClass("fadeInUp").css("opacity","0");
-			$(".swiper-container-nam .swiper-slide .swiper-text-nam").removeClass("fadeInUp").css("opacity","0");
-			$(".swiper-container-nam .swiper-slide .swiper-view-nam").removeClass("fadeInUp").css("opacity","0");
-			$(".swiper-container-nam .swiper-slide .swiper-title-nam").removeClass("fadeOutDown");
-			$(".swiper-container-nam .swiper-slide .swiper-text-nam").removeClass("fadeOutDown");
-			$(".swiper-container-nam .swiper-slide .swiper-view-nam").removeClass("fadeOutDown");
-			$(".swiper-container-nam .swiper-slide .ImgBook").removeClass("aa").css("opacity","0");
-			  $(".swiper-container-nam .swiper-slide").eq(swiper.activeIndex).find(".swiper-title-nam").addClass("fadeInUp"); 
-			  
-			  setTimeout(function(){
-				  $(".swiper-container-nam .swiper-slide").eq(swiper.activeIndex).find(".swiper-text-nam").addClass("fadeInUp");
-
-			  },300);
-			  setTimeout(function(){
-				  $(".swiper-container-nam .swiper-slide").eq(swiper.activeIndex).find(".swiper-view-nam").addClass("fadeInUp");
-			  },500);
-			  $(".swiper-container-nam .swiper-slide").eq(swiper.activeIndex).find(".ImgBook").addClass("aa");
-		   }
-
-		});
-		//第四版块
-		$(".subcontentHoverBefor").hover(function(){//.addClass("movedown2").removeClass("moveup2")
-			$(this).find(".resultTitleNam").addClass("moveup2").removeClass("movedown2").hide();
-			$(this).find(".resultImgNam").addClass("moveup").removeClass("movedown");
-			$(this).find(".resultContentNam").show().addClass("moveup2").removeClass("moveup2");
-			var that = $(this);
-			
-			that.find(".resultMoreNam").css("opacity","0");
-//			setTimeout(function(){
-				that.find(".resultMoreNam").css("opacity","0").addClass("moveup2").removeClass("movedown2");
-//			},100)
-			
-		},function(){
-
-			$(this).find(".resultImgNam").addClass("movedown").removeClass("moveup");
-			$(this).find(".resultMoreNam").css("opacity","1").addClass("movedown2").removeClass("moveup2");
-//			$(this).find(".resultMoreNam").addClass("movedown2").removeClass("moveup2");
-			var that = $(this);
-			that.find(".resultTitleNam").show();
-
-				that.find(".resultContentNam").hide();
-			
-		});
-		//第四版结束
-		
-		//第五版hover
-		$(".img-list").hover(function(){
-			$(this).find(".squares").addClass("inzoom").removeClass("outzoom");
-			$(this).find(".newMoreNam").addClass("moveup3").removeClass("movedown3");
-		},function(){
-			$(this).find(".squares").addClass("outzoom").removeClass("inzoom");
-			$(this).find(".newMoreNam").addClass("movedown3").removeClass("moveup3");
-		})
-		$('.d-nav li').each(function(index){
-			// console.log(swiperIndex);
-			// $($('.d-nav li')[swiperIndex]).siblings().removeClass('d-active');
-			// $($('.d-nav li')[swiperIndex]).addClass('d-active');
-			$(this).click(function(){
-				console.log(index);
-				swiper.slideTo(index,1000,true);
-				$(this).siblings().removeClass('d-active');
-				$(this).addClass('d-active');	
-			});
-		});	
-		var swiper = new Swiper('.swiper-container', {
-			// pagination: '.swiper-container-v',
-			direction: 'vertical',
-			slidesPerView: 1,
-			paginationClickable: true,
-			spaceBetween: 30,
-			mousewheelControl: true,
-			onSlideChangeStart:function(swiper){
-				var swiperIndex=swiper.activeIndex;
-				// console.log(swiperIndex);
-				$('.d-nav li').each(function(index){
-					console.log(swiperIndex);
-					$($('.d-nav li')[swiperIndex]).siblings().removeClass('d-active');
-					$($('.d-nav li')[swiperIndex]).addClass('d-active');
-					$(this).click(function(){
-						console.log(index);
-						swiper.slideTo(index,1000,true);
-						$(this).siblings().removeClass('d-active');
-						$(this).addClass('d-active');
-						
-					});
-				});		
-				switch(swiperIndex){
-					// case 2:
-					// $('.y-fifthSection .content .content-lt ul li span').removeClass("fadeInLeft");
-					// $('.y-fifthSection .content .content-rt .imgList .img-list').removeClass('fadeInRight');
-					// $('.y-fifthSection .content .content-rt .text').find().removeClass('fadeInUp');
-					// break;
-					case 3:
-					// $('.y-sixSection .content .subcontent').eq(0).removeClass('fadeInLeft');
-					// $('.y-sixSection .content .subcontent').eq(1).removeClass('fadeInRight');//清除第五瓶动画
-					setTimeout(function(){
-						$('.y-fifthSection .content .content-lt ul li').eq(0).find('span').addClass("fadeInLeft");
-					},150);
-					setTimeout(function(){
-						$('.y-fifthSection .content .content-lt ul li').eq(1).find('span').addClass("fadeInLeft");
-					},300);
-					setTimeout(function(){
-						$('.y-fifthSection .content .content-lt ul li').eq(2).find('span').addClass("fadeInLeft");
-					},450);
-					setTimeout(function(){
-						$('.y-fifthSection .content .content-lt ul li').eq(3).find('span').addClass("fadeInLeft");
-					},600);
-					setTimeout(function() {
-						$('.y-fifthSection .content .content-rt .imgList .img-list').eq(0).addClass('fadeInRight');
-					},150);
-					setTimeout(function() {
-						$('.y-fifthSection .content .content-rt .imgList .img-list').eq(1).addClass('fadeInRight');
-					},300);
-					setTimeout(function() {
-						$('.y-fifthSection .content .content-rt .imgList .img-list').eq(2).addClass('fadeInRight');
-					},450);
-					setTimeout(function(){
-						$('.y-fifthSection .content .content-rt .text .textImg').addClass('fadeInUp');
-					},150);
-					setTimeout(function(){
-						$('.y-fifthSection .content .content-rt .text h4').addClass('fadeInUp');
-					},300);
-					setTimeout(function(){
-						$('.y-fifthSection .content .content-rt .text p').addClass('fadeInUp');
-					},450);
-					setTimeout(function(){
-						$('.y-fifthSection .content .content-rt .text a').addClass('fadeInUp');
-					},300);
-					setTimeout(function() {
-						$('.y-sixSection').stop(true, false)
-					},500);
-					
-					break;
-					case 4:
-					//清除第四瓶动画
-					
-					// $('.y-fifthSection .content .content-lt ul li span').removeClass("fadeInLeft");
-					// $('.y-fifthSection .content .content-rt .imgList .img-list').removeClass('fadeInRight');
-					// $('.y-fifthSection .content .content-rt .text').find().removeClass('fadeInUp');
-				
-					$('.y-sixSection .content .subcontent').eq(0).addClass('fadeInLeft');
-					$('.y-sixSection .content .subcontent').eq(1).addClass('fadeInRight');
-
-					break;
-					case 5:
-					// $('.y-sixSection .content .subcontent').eq(0).removeClass('fadeInLeft');
-					// $('.y-sixSection .content .subcontent').eq(1).removeClass('fadeInRight');//清除第五瓶动画
-					break;
-				};
-				switch(swiper.previousIndex){
-					case 3:
-					$('.y-fifthSection .content .content-lt ul li span').removeClass("fadeInLeft");
-					$('.y-fifthSection .content .content-rt .imgList .img-list').removeClass('fadeInRight');
-					$('.y-fifthSection .content .content-rt .text').find('h4').removeClass('fadeInUp');
-					$('.y-fifthSection .content .content-rt .text').find('p').removeClass('fadeInUp');
-					$('.y-fifthSection .content .content-rt .text').find('.textImg').removeClass('fadeInUp');
-					$('.y-fifthSection .content .content-rt .text').find('a').removeClass('fadeInUp');
-					break;
-					case 4:
-					$('.y-sixSection .content .subcontent').eq(0).removeClass('fadeInLeft');
-					$('.y-sixSection .content .subcontent').eq(1).removeClass('fadeInRight');
-					break;
-					
-				};
-
-				
-			}
-		});
-		//第一屏伸缩
-		$(".subcontent").hover(function(){
-			$(this).find(".sub").css("animation","shen 0.5s forwards");
-			$(this).find(".subcontent-rt").css("animation","suo 0.5s forwards");
-		},function(){
-			$(this).find(".sub").css("animation","suo 0.5s forwards");
-			$(this).find(".subcontent-rt").css("animation","shen 0.5s forwards");
-		});
-		
-		$('.y-sevenSection .subSlide .content .subContent').hover(function(){
-			$(this).find('.shade').css("animation","suo 0.5s forwards");
-			$(this).find('.content-lt').css("background",'#e71111');
-		},function(){
-			$(this).find('.shade').css("animation","shen 0.5s forwards");
-			$(this).find('.content-lt').css("background",'none');
-		});
-
-		$('.y-fifthSection .content .content-lt ul li span').hover(function(){
-			$(this).stop(true, true).animate({left:'32%'},300);
-			$(this).next().css("animation","suo 0.3s forwards");
-		},function(){
-			
-			$(this).stop(true, true).animate({left:'40%'},300);
-			$(this).next().css("animation","shen 0.3s forwards");
-		});
-
-
-		// $('.y-fifthSection .content .content-rt .imgList .img-list .subImg').hover(function(){
-		// 	$(this).css('z-index',1);
-		// 	$(this).next().css('z-index',10);
-		// 	$(this).next('.square').css("animation","sqhover 0.5s forwards");
-		// },function(){
-		// 	$(this).next().animate({"opacity":0});
-		// 	$(this).css('z-index',10);
-		// 	$(this).next().css('z-index',1);
-			
-		// });
-		var $a=$(".buttons a");
-			var $s=$(".buttons span");
-			var cArr=["p7","p6","p5","p4","p3","p2","p1"];
-			var index=0; 
-			$(".next").click(
-				function(){
-				nextimg();
-				}
-			)
-			$(".prev").click(
-				function(){
-				previmg();
-				}
-			)
-			//上一张
-			
-			function previmg(){
-				
-				cArr.unshift(cArr[6]);
-				cArr.pop();
-				//i是元素的索引，从0开始
-				//e为当前处理的元素
-				//each循环，当前处理的元素移除所有的class，然后添加数组索引i的class
-				// $(".content-carousel li").hide();
-				$(".content-carousel li").each(function(i,e){
-					$(e).removeClass().addClass(cArr[i]);
-				})
-				index--;
-				if (index<0) {
-					index=6;
-				}
-				show();
-			}
-
-			//下一张
-			function nextimg(){
-				
-				cArr.push(cArr[0]);
-				cArr.shift();
-				$(".content-carousel li").each(function(i,e){
-					$(e).removeClass().addClass(cArr[i]);
-				})
-				index++;
-				if (index>6) {
-					index=0;
-				}
-				show();
-			}
-
-			//通过底下按钮点击切换
-			$a.each(function(){
-				$(this).click(function(){
-					var myindex=$(this).index();
-					var b=myindex-index;
-					if(b==0){
-						return;
-					}
-					else if(b>0) {
-						/*
-						 * splice(0,b)的意思是从索引0开始,取出数量为b的数组
-						 * 因为每次点击之后数组都被改变了,所以当前显示的这个照片的索引才是0
-						 * 所以取出从索引0到b的数组,就是从原本的这个照片到需要点击的照片的数组
-						 * 这时候原本的数组也将这部分数组进行移除了
-						 * 再把移除的数组添加的原本的数组的后面
-						 */
-						var newarr=cArr.splice(0,b);
-						cArr=$.merge(cArr,newarr);
-						$(".content-carousel li").each(function(i,e){
-						$(e).removeClass().addClass(cArr[i]);
-						})
-						index=myindex;
-						show();
-					}
-					else if(b<0){
-						/*
-						 * 因为b<0,所以取数组的时候是倒序来取的,也就是说我们可以先把数组的顺序颠倒一下
-						 * 而b现在是负值,所以取出索引0到-b即为需要取出的数组
-						 * 也就是从原本的照片到需要点击的照片的数组
-						 * 然后将原本的数组跟取出的数组进行拼接
-						 * 再次倒序,使原本的倒序变为正序
-						 */
-						cArr.reverse();
-						var oldarr=cArr.splice(0,-b)
-						cArr=$.merge(cArr,oldarr);
-						cArr.reverse();
-						$(".content-carousel li").each(function(i,e){
-						$(e).removeClass().addClass(cArr[i]);
-						})
-						index=myindex;
-						show();
-					}
-				})
-			})
-
-			//改变底下按钮的背景色
-			function show(){
-					$($s).eq(index).addClass("blue").parent().siblings().children().removeClass("blue");
-			}
-
-			//点击class为p2的元素触发上一张照片的函数
-			$(document).on("click",".p2",function(){
-				previmg();
-				return false;//返回一个false值，让a标签不跳转
-			});
-
-			//点击class为p4的元素触发下一张照片的函数
-			$(document).on("click",".p4",function(){
-				nextimg();
-				return false;
-			});
-
-//			鼠标移入box时清除定时器
-			$(".box").mouseover(function(){
-				clearInterval(timer);
-			})
-
-//			鼠标移出box时开始定时器
-			$(".box").mouseleave(function(){
-				timer=setInterval(nextimg,4000);
-			})
-
-//			进入页面自动开始定时器
-			timer=setInterval(nextimg,4000);
-
-
-
-
-
-
-	</script>
+	<a class="arrow" href="#secondSection"><i class="icon iconfont icon-sks"></i></a>
+	<div class="backTop"><i class="icon iconfont icon-tubiaozhizuomoban"></i></div>
 </body>
-
+<script type="text/javascript">
+	
+        $(window).resize(function () {
+            if ($(window).width() > 750) {
+                
+                $('.y-sixSection').parallax("50%", 0.2);
+    
+            }
+        }).trigger('resize');
+    
+</script>
 </html>

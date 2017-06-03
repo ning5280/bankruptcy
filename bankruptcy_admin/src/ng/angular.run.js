@@ -25,5 +25,5 @@ myApp.run(['$rootScope','ipCookie',function($rootScope,ipCookie){
 
 myApp.value('appName','破产法论坛');
 
-myApp.value('pageSize','12');
+myApp.value('pageSize','21');
 

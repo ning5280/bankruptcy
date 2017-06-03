@@ -52,7 +52,7 @@ jQuery(function() {
                 '<div id="' + file.id + '" class="file-item thumbnail">' +
                     '<img>' +
                     '<div class="info">' + file.name + '</div>' +
-                '<span class=del>X</span></div>'
+                '<div class=tpl-table-black-operation><a class="tpl-table-black-operation-del del"><i class=am-icon-trash></i>删除</a></div></div>'
                 ),
             $img = $li.find('img');
  
@@ -114,11 +114,12 @@ jQuery(function() {
     });
 
     $('#fileList').on("click",".file-item .del",function(){
-    	if($(this).parent().attr("id")){
-    		uploader.removeFile($(this).parent().attr("id"));
+    	if($(this).parent().parent().attr("id")){
+    		uploader.removeFile($(this).parent().parent().attr("id"));
+    		console.log($(this).parent().parent().attr("id"));
     	}
 			
-	 	$(this).parent().remove();
+	 	$(this).parent().parent().remove();
 	 	$(".hidden").val("");
 	 })
 	}
