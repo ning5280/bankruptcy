@@ -8,7 +8,7 @@ $(function(){
 			Base.alert("请输入搜索关键字！")
 		}
 		
-	})
+	});
 	$(".indexSearchInputNam").on("keydown",function(e){
 		if(e.keyCode==13){
 			var texts=$(this).val();
@@ -19,12 +19,12 @@ $(function(){
 			}
 			
 		}
-	})
+	});
 	//第一个轮播
     var mySwiperss = new Swiper('.swiper-container-nam',{//首页第一屏轮播
 			loop:true,
-			autoplay : 5000,
-			speed:0,
+			autoplay : 3000,
+			speed:10,
 //			direction: 'vertial',
 //			virtualTranslate : true,
 			prevButton:'.swiper-button-prev',
@@ -33,7 +33,7 @@ $(function(){
 			paginationClickable :true,
 			pagination: '.swiper-pagination-nam',
 			onSlideChangeStart: function(swiper){
-
+//			alert(1)
 			$(".swiper-container-nam .swiper-slide .swiper-titlem").removeClass("fadeInUp").css("opacity","0");
 			$(".swiper-container-nam .swiper-slide .swiper-text-nam").removeClass("fadeInUp").css("opacity","0");
 			$(".swiper-container-nam .swiper-slide .swiper-view-nam").removeClass("fadeInUp").css("opacity","0");
@@ -51,22 +51,14 @@ $(function(){
 				  $(".swiper-container-nam .swiper-slide").eq(swiper.activeIndex).find(".swiper-view-nam").addClass("fadeInUp");
 			  },500);
 			  $(".swiper-container-nam .swiper-slide").eq(swiper.activeIndex).find(".ImgBook img").addClass("aa");
-		   }
 
+			}
+			 
 		});
-        $(".swiper-container-nam .swiper-slide").eq(0).find(".swiper-title-nam").addClass("fadeInUp"); 
-	
-		  setTimeout(function(){
-			  $(".swiper-container-nam .swiper-slide").eq(0).find(".swiper-text-nam").addClass("fadeInUp");
-
-		  },300);
-		  setTimeout(function(){
-			  $(".swiper-container-nam .swiper-slide").eq(0).find(".swiper-view-nam").addClass("fadeInUp");
-		  },500);
-		   $(".swiper-container-nam .swiper-slide").eq(0).find(".ImgBook img").addClass("aa");
+       
 
 		//第四版块
-		$(".subcontentHoverBefor").css("height",$(".y-fourthSection").height()-166+"px")
+		$(".subcontentHoverBefor").css("height",$(".y-fourthSection").height()-166+"px");
 		$(".subcontentHoverBefor").hover(function(){//.addClass("movedown2").removeClass("moveup2")
 			$(this).find(".resultImgNam").addClass("moveup").removeClass("movedown");
 			$(this).find(".resultContentNam").css("opacity","0").addClass("moveupcontent").removeClass("movedowncontent");
